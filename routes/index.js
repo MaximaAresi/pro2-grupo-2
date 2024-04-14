@@ -1,17 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* REQUIERO EL CONTROLLER DE INDEX */ 
+/* REQUIERO EL CONTROLLER DE INDEX */
 var indexController = require('../controllers/indexController');
 
 /* SUFIJOS DE /index */
-router.get('/', indexController.index);
-
-router.get('/login', indexController.login);
-
-router.get('/register', indexController.register);
-
-router.get('/profile', indexController.profile);
-
+router.get('/', indexController.main);
 
 module.exports = router;

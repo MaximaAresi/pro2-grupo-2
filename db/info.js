@@ -28,7 +28,7 @@ let db = {
                 }
 
             ]
-        }, 
+        },
         {
             nombreProducto: 'Remera',
             id: 5,
@@ -49,7 +49,7 @@ let db = {
                 }
 
             ]
-        }, 
+        },
         {
             nombreProducto: 'Medias',
             id: 6,
@@ -200,5 +200,5 @@ let db = {
     ],
 }
 
-/*Exportar*/
+/* Exportar */
 module.exports = db;

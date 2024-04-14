@@ -5,8 +5,10 @@ var router = express.Router();
 var productsController = require('../controllers/productsController');
 
 /* SUFIJOS DE /products */
-router.get('/', productsController.index);
+router.get('/', productsController.main);
 
 router.get('/detalle/:id?', productsController.detalle);
+
+router.get('/add', productsController.productAdd);
 
 module.exports = router;
