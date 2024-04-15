@@ -1,6 +1,6 @@
 let registerController = {
     main: function(req, res) {
-        return res.render("login");
+        return res.render("register");
     }
 }
 
