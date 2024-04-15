@@ -5,7 +5,7 @@ let profileController = {
         return res.render("profile", {db: db});
     },
     edit: function(req, res) {
-        return res.render("profile-edit");
+        return res.render("profile-edit", {db: db});
     }
 }
 

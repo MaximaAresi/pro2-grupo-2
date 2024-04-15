@@ -1,3 +1,5 @@
+const db =  require('../db/info')
+
 let productsController = {
     main: function (req, res) {
         return res.render("todos-productos");
@@ -9,7 +11,7 @@ let productsController = {
         return res.render("product");
     },
     productAdd: function (req, res) {
-        return res.render("product-add")
+        return res.render("product-add", {db: db})
 
     }
 }
