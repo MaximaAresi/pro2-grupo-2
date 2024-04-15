@@ -1,12 +1,12 @@
 let productsController = {
     main: function (req, res) {
-        return res.render("product");
+        return res.render("todos-productos");
     },
     detalle: function (req, res) {
         // let idProduct = req.params.id;
 
         /* dejo esto por ahora */
-        return res.render("search-results");
+        return res.render("product");
     },
     productAdd: function (req, res) {
         return res.render("product-add")
