@@ -9,192 +9,155 @@ let db = {
     },
     productos: [
         {
-            nombreProducto: 'Jean',
-            id: 4,
-            descripcionProducto: 'Jean color azul, con costuras blancas',
+            nombreProducto: 'Camisa',
+            descripcionProducto: 'Camisa color beige, con botones rosas',
             fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            precioProducto: "$55.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
+                    nombre_usuario: 'maresi',
                     texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/fotoUsuario1.png'
+                }
+            ]
+        },
+        {
+            nombreProducto: 'Jean',
+            descripcionProducto: 'Jean color azul, con costuras blancas',
+            fotoProducto: '/images/fotoProducto2.png',
+            precioProducto: "$70.000-.",
+            comentarios_Producto: [
+                {
+                    nombre_usuario: 'maresi',
+                    texto_comentario: 'Estoy super contenta!!',
                     img_perfil: '/images/fotoUsuario1.png'
                 },
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/fotoUsuario5.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Remera',
-            id: 5,
             descripcionProducto: 'Remera color negra, con estampa',
-            fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            fotoProducto: '/images/fotoProducto3.png',
+            precioProducto: "$34.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
+                    nombre_usuario: 'maresi',
+                    texto_comentario: 'Lindo diseño pero la calidad no tanto :(',
                     img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Medias',
-            id: 6,
             descripcionProducto: 'Medias color blanco',
-            fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            fotoProducto: '/images/fotoProducto4.png',
+            precioProducto: "$12.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'De las mejores compras de mi vida <3',
                     img_perfil: '/images/fotoUsuario2.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Soquetes',
-            id: 7,
             descripcionProducto: 'Soquetes color blanco',
-            fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            fotoProducto: '/images/fotoProducto5.png',
+            precioProducto: "$10.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'No me gustó!',
                     img_perfil: '/images/fotoUsuario2.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Buzo',
-            id: 8,
             descripcionProducto: 'Buzo color violeta, con capucha',
-            fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            fotoProducto: '/images/fotoProducto6.png',
+            precioProducto: "$48.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Espectacular!',
                     img_perfil: '/images/fotoUsuario2.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Sweater',
-            id: 9,
-            descripcionProducto: 'Sweater color verde',
-            fotoProducto: '/images/fotoProducto.png',
-            comentarios: [
+            descripcionProducto: 'Swater color verde',
+            fotoProducto: '/images/fotoProducto7.png',
+            precioProducto: "$56.000-.",
+            comentarios_Producto: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    nombre_usuario: 's_villar',
+                    texto_comentario: 'Super lindo!',
+                    img_perfil: '/images/fotoUsuario3.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Zapatillas',
-            id: 10,
             descripcionProducto: 'Zapatillas color negro, con cordones',
-            fotoProducto: '/images/fotoProducto.png',
+            fotoProducto: '/images/fotoProducto8.png',
             comentarios: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    nombre_usuario: 's_villar',
+                    texto_comentario: 'No lo volvería a comprar!',
+                    img_perfil: '/images/fotoUsuario3.png'
                 },
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'No me gusto mucho!',
+                    img_perfil: '/images/fotoUsuario5.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Campera',
-            id: 11,
             descripcionProducto: 'Campera color azul, con capucha',
-            fotoProducto: '/images/fotoProducto.png',
+            fotoProducto: '/images/fotoProducto9.png',
             comentarios: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
+                    nombre_usuario: 's_villar',
                     texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    img_perfil: '/images/fotoUsuario3.png'
                 },
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    nombre_usuario: 'bgomez',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/fotoUsuario4.png'
+                }, 
+                {
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Super bueno!',
+                    img_perfil: '/images/fotoUsuario5.png'
                 }
-
             ]
         },
         {
             nombreProducto: 'Chaleco',
-            id: 12,
             descripcionProducto: 'Chaleco color beige',
-            fotoProducto: '/images/fotoProducto.png',
+            fotoProducto: '/images/fotoProducto10.png',
             comentarios: [
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
+                    nombre_usuario: 's_villar',
+                    texto_comentario: 'Muy lindo! Lo vovería a comprar!!',
+                    img_perfil: '/images/fotoUsuario3.png'
+                }, 
                 {
-                    usuarios_id: '2',
-                    producto_id: '4',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    nombre_usuario: 'bgomez',
+                    texto_comentario: 'Me encanto!',
+                    img_perfil: '/images/fotoUsuario4.png'
                 }
-
             ]
         },
     ],
