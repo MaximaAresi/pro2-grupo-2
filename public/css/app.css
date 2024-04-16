@@ -4,10 +4,10 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #318f96;
+  --turquoise: #47a4ab;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
-  --gray: #666666;
+  --gray: #505050;
   --light-gray: #ebebeb;
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
@@ -68,7 +68,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: var(--turquoise);
 }
 
 .main-header_home-link,
@@ -259,7 +259,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: var(--turquoise);
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -452,6 +452,14 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;}
+
+label, input, button {
+    margin-bottom: 10px;
+  }
 
 /*====== Profile ======*/
 .info-usuario{
