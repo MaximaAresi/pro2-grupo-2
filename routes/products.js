@@ -5,10 +5,17 @@ var router = express.Router();
 var productsController = require('../controllers/productsController');
 
 /* SUFIJOS DE /products */
-router.get('/', productsController.main);
 
+// RUTA: /products
+router.get('/', productsController.main); /* todos los productos */
+
+// RUTA: /products/detalle/[id]
 router.get('/detalle/:id?', productsController.detalle);
 
+// RUTA: /products/add
 router.get('/add', productsController.productAdd);
 
-module.exports = router;
+// RUTA: /products/search
+router.get('/search', productsController.search);
+
+module.exports = router; 

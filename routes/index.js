@@ -5,6 +5,8 @@ var router = express.Router();
 var indexController = require('../controllers/indexController');
 
 /* SUFIJOS DE /index */
+
+// RUTA: /
 router.get('/', indexController.main);
 
 module.exports = router;

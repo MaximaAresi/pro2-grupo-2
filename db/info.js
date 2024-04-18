@@ -5,7 +5,7 @@ let db = {
         contraseña: '12345',
         fechaDeNacimiento: '21/09/2002',
         DNI: '12345678',
-        fotoDePerfil: '/images/images.jpeg'
+        fotoDePerfil: '/images/users/profile-pic.jpeg'
     },
     productos: [
         {

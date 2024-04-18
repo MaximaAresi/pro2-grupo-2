@@ -8,11 +8,13 @@ let productsController = {
         // let idProduct = req.params.id;
 
         /* dejo esto por ahora */
-        return res.render("product");
+        return res.render("product", {db: db});
     },
     productAdd: function (req, res) {
         return res.render("product-add", {db: db})
-
+    },
+    search: function (req, res) {
+        return res.render("search-results", {db: db})
     }
 }
 

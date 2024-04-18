@@ -1,9 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+/* REQUIERO EL CONTROLLER DE USERS */
+var usersController = require('../controllers/usersController');
+
+
+/* SUFIJOS DE /users */
+
+// RUTA: /users/login
+router.get('/login', usersController.login);
+
+// RUTA: /users/register
+router.get('/register', usersController.register);
+
+// RUTA: /users/[id]]
+router.get('/:id?', usersController.profile);
+
+// RUTA: /[id]]/edit
+router.get('/:id?/edit', usersController.profileEdit);
+
 
 module.exports = router;
