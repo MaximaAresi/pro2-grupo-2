@@ -69,7 +69,7 @@ let db = {
                     nombre_usuario: 'vic_molinari',
                     texto_comentario: 'No me convencio del todo',
                     img_perfil: '/images/fotoUsuario2.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'Fea la tela',
@@ -87,7 +87,7 @@ let db = {
                     nombre_usuario: 'vic_molinari',
                     texto_comentario: 'De las mejores compras de mi vida <3',
                     img_perfil: '/images/fotoUsuario2.png'
-                }, 
+                },
                 {
                     nombre_usuario: 's_villar',
                     texto_comentario: 'Muy lindo!',
@@ -138,7 +138,7 @@ let db = {
                     nombre_usuario: 'maresi',
                     texto_comentario: 'Muy bueno!',
                     img_perfil: '/images/fotoUsuario1.png'
-                }, 
+                },
                 {
                     nombre_usuario: 's_villar',
                     texto_comentario: 'Gran compra!',
@@ -161,7 +161,7 @@ let db = {
                     nombre_usuario: 'maresi',
                     texto_comentario: 'Muy bueno!',
                     img_perfil: '/images/fotoUsuario1.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'bgomez',
                     texto_comentario: 'Lo recomiendo',
@@ -173,7 +173,7 @@ let db = {
             nombreProducto: 'Zapatillas',
             descripcionProducto: 'Zapatillas color negro, con cordones',
             fotoProducto: '/images/fotoProducto8.png',
-            comentarios: [
+            comentarios_Producto: [
                 {
                     nombre_usuario: 's_villar',
                     texto_comentario: 'No lo volvería a comprar!',
@@ -183,7 +183,7 @@ let db = {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'No me gusto mucho!',
                     img_perfil: '/images/fotoUsuario5.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'bgomez',
                     texto_comentario: 'No lo recomiendo',
@@ -195,7 +195,7 @@ let db = {
             nombreProducto: 'Campera',
             descripcionProducto: 'Campera color azul, con capucha',
             fotoProducto: '/images/fotoProducto9.png',
-            comentarios: [
+            comentarios_Producto: [
                 {
                     nombre_usuario: 's_villar',
                     texto_comentario: 'Muy lindo producto!',
@@ -205,7 +205,7 @@ let db = {
                     nombre_usuario: 'bgomez',
                     texto_comentario: 'Divino!',
                     img_perfil: '/images/fotoUsuario4.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'Super bueno!',
@@ -217,17 +217,17 @@ let db = {
             nombreProducto: 'Chaleco',
             descripcionProducto: 'Chaleco color beige',
             fotoProducto: '/images/fotoProducto10.png',
-            comentarios: [
+            comentarios_Producto: [
                 {
                     nombre_usuario: 's_villar',
                     texto_comentario: 'Muy lindo! Lo vovería a comprar!!',
                     img_perfil: '/images/fotoUsuario3.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'bgomez',
                     texto_comentario: 'Me encanto!',
                     img_perfil: '/images/fotoUsuario4.png'
-                }, 
+                },
                 {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'Super bueno!',

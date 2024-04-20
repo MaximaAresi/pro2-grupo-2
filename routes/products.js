@@ -3,11 +3,12 @@ var router = express.Router();
 
 /* REQUIERO EL CONTROLLER DE PRODUCTOS */ 
 var productsController = require('../controllers/productsController');
+var indexController = require('../controllers/indexController');
 
 /* SUFIJOS DE /products */
 
 // RUTA: /products
-router.get('/', productsController.main); /* todos los productos */
+router.get('/', indexController.main); /* todos los productos */
 
 // RUTA: /products/detalle/[id]
 router.get('/detalle/:id?', productsController.detalle);

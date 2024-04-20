@@ -14,10 +14,10 @@ router.get('/login', usersController.login);
 router.get('/register', usersController.register);
 
 // RUTA: /users/[id]]
-router.get('/:id?', usersController.profile);
+router.get('/profile/:id', usersController.profile);
 
 // RUTA: /[id]]/edit
-router.get('/:id?/edit', usersController.profileEdit);
+router.get('/:id/edit', usersController.profileEdit);
 
 
 module.exports = router;
