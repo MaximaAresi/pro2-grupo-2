@@ -9,8 +9,9 @@
   --light-blue: #1259c3;
   --gray: #505050;
   --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --blue: #263b74;
+  --base-font-family: 'Verdana';
+  --base-font-family-titles: "Helvetica"
 }
 
 
@@ -199,7 +200,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/pro2-grupo-2/public/images/img-home-banner.jpg);
+  background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -217,6 +218,7 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: inherit;
+  font-family: var(--base-font-family-titles);
 }
 
 .product-box {
@@ -245,6 +247,7 @@ hr {
 
 .product-box_data h2 {
   font-size: 2.4em;
+  font-family: var(--base-font-family-titles);
   font-weight: 300;
   margin: 0;
 }
@@ -252,7 +255,7 @@ hr {
 .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
-  color: var(--green);
+  color: var(--blue);
   margin: 0 0 0 10px;
 }
 
@@ -267,7 +270,7 @@ hr {
 }
 
 .product-box_data i {
-  color: var(--green);
+  color: var(--blue);
   font-size: 1.8em;
   width: 35px;
   height: 35px;
@@ -299,7 +302,7 @@ hr {
 
 .product-box:hover i {
   transform: rotate(360deg);
-  box-shadow: 0 0 5px var(--green);
+  box-shadow: 0 0 5px var(--blue);
 }
 
 /*====== Footer ======*/
@@ -386,7 +389,7 @@ hr {
 
 .small {
   font-size: 1.8em;
-  color: var(--green);
+  color: var(--blue);
 }
 
 .small span {
@@ -405,7 +408,7 @@ hr {
 }
 
 .actions-list i {
-  color: var(--green);
+  color: var(--blue);
   font-size: 2em;
   margin-right: 15px;
 }
