@@ -107,6 +107,7 @@ hr {
   padding: 15px 0px;
   background-color: var(--turquoise);
   height: 150px;
+  font-weight: bold;
 }
 
 .main-header_home-link,
@@ -376,6 +377,9 @@ hr {
   line-height: 1.5;
 }
 
+.product-detail-description a {
+  font-weight: bold;
+}
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;
