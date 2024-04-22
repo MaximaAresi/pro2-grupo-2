@@ -17,11 +17,11 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 				
-				<form action:="http://localhost:3000/profile/profile-edit" method="GET"> 
-					<label for="usuario">Ingrese su nuevo nombre e usuario: <input id="usuario" type="text" name="usuario" value=""> </label>
-					<label for="contraseña">Ingrese su nueva contraseña: <input id="contreseña" type="text" name="contreseña" value=""> </label>
-					<label for="email">Ingrese su nuevo mail: <input id="email" type="email" name="email" value=""> </label> 
-					<label for="fdp">Ingrese su nueva foto de perfil: <input id="fdp" type="file" name="fdp" value=""></label>
+				<form class = "formModificado" action="/users/profile/id" method="GET"> 
+					<label for="usuario">Ingrese su nuevo nombre de usuario: <input id="usuario" type="text" required name="usuario" value=""> </label>
+					<label for="contraseña">Ingrese su nueva contraseña: <input id="contreseña" type="text" required name="contreseña" value=""> </label>
+					<label for="email">Ingrese su nuevo mail: <input id="email" type="email" required name="email" value=""> </label> 
+					<label for="fdp">Ingrese su nueva foto de perfil: <input id="fdp" type="file" required name="fdp" value=""></label>
 					<input type="submit" value="Submit" />
 				</form>
 				
