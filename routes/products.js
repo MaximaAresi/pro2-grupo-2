@@ -5,13 +5,12 @@ var router = express.Router();
 var productsController = require('../controllers/productsController');
 var indexController = require('../controllers/indexController');
 
-/* SUFIJOS DE /products */
 
-// RUTA: /products
+// RUTA: /products/
 router.get('/', indexController.main); /* todos los productos */
 
 // RUTA: /products/detalle/[id]
-router.get('/detalle/:id?', productsController.detalle);
+router.get('/detalle/:id', productsController.detalle);
 
 // RUTA: /products/add
 router.get('/add', productsController.productAdd);

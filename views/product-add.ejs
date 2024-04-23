@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/headerLogueado.ejs') %>
+			<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-	
-				<form class="formModificado" method="GET" action='/products/detalle'> 
-					
-					<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" type="text" required /></label>
-					<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" type="text" required /></label>
-					<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" type="file" required /></label>
-					<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" type="number" required /></label>
-					<input type="submit" value="Submit" />
-			  
-				</form>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Agregar productos</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
 
-			</h2>
+						<form class="formModificado" method="GET" action='/products/detalle/id'>
+
+							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" type="text"
+									required /></label>
+							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" type="text"
+									required /></label>
+							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" type="file"
+									required /></label>
+							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" type="number"
+									required /></label>
+							<input type="submit" value="Submit" />
+
+						</form>
+
+					</h2>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer.ejs') %>
+						<!-- /footer -->
+	</body>
 
 </html>

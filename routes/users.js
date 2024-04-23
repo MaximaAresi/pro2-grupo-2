@@ -5,15 +5,13 @@ var router = express.Router();
 var usersController = require('../controllers/usersController');
 
 
-/* SUFIJOS DE /users */
-
 // RUTA: /users/login
 router.get('/login', usersController.login);
 
 // RUTA: /users/register
 router.get('/register', usersController.register);
 
-// RUTA: /users/[id]]
+// RUTA: /users/profile/[id]]
 router.get('/profile/:id', usersController.profile);
 
 // RUTA: /[id]]/edit

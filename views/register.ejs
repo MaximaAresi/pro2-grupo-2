@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header.ejs') %> 
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header.ejs') %>
 
-	<!-- /Header -->
+			<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				
-				<form class="formModificado" method="GET" action='/users/profile/id'> 
-					
-					  <label for="usuario">Usuario: <input id="usuario" type="text" required /></label>
-					  <label for="contraseña">Contraseña: <input id="contraseña" type="password" required /></label>
-					  <label for="email">E-mail: <input id="email" type="email" required /></label>
-					  <label for="dni">DNI: <input id="dni" type="text" required /></label>
-					  <label for="fdn">Fecha de Nacimiento: <input id="fdn" type="date" required /></label>
-					  <label for="fdp">Foto de Perfil: <input id="fdp" type="file" required /></label>
-					  <input type="submit" value="Submit" />
-				
-				  </form>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Registrate</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
 
-			</h2>
+						<form class="formModificado" method="GET" action='/users/profile/id'>
+
+							<label for="usuario">Usuario: <input id="usuario" type="text" required /></label>
+							<label for="contraseña">Contraseña: <input id="contraseña" type="password"
+									required /></label>
+							<label for="email">E-mail: <input id="email" type="email" required /></label>
+							<label for="dni">DNI: <input id="dni" type="text" required /></label>
+							<label for="fdn">Fecha de Nacimiento: <input id="fdn" type="date" required /></label>
+							<label for="fdp">Foto de Perfil: <input id="fdp" type="file" required /></label>
+							<input type="submit" value="Submit" />
+
+						</form>
+
+					</h2>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer.ejs') %>
+						<!-- /footer -->
+	</body>
 
 </html>

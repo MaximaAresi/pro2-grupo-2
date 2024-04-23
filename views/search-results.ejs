@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header.ejs') %>
+			<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			
-				
-			<% for (let i=0; i < 8; i++ ) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/products/detalle/">
-							<figure class="product-box_image">
-								<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
-									alt="<%= db.productos[i].nombreProducto %>">
-							</figure>
-							<article class="product-box_data">
-								<h2>
-									<%= db.productos[i].nombreProducto%>
-								</h2>
-								<p>
-									<%= db.productos[i].descripcionProducto%>
-								</p>
-								<p>Comentarios: <%= db.productos[i].comentarios_Producto.length %>
-								</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
-			
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Resultados de búsqueda</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+
+					<% for (let i=0; i < 8; i++ ) { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="/products/detalle/id">
+									<figure class="product-box_image">
+										<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
+											alt="<%= db.productos[i].nombreProducto %>">
+									</figure>
+									<article class="product-box_data">
+										<h2>
+											<%= db.productos[i].nombreProducto%>
+										</h2>
+										<p>
+											<%= db.productos[i].descripcionProducto%>
+										</p>
+										<p>Comentarios: <%= db.productos[i].comentarios_Producto.length %>
+										</p>
+									</article>
+								</a>
+							</section>
+						</div>
+						<% } %>
+
+
+							<!-- footer -->
+							<%- include('./partials/footer.ejs') %>
+								<!-- /footer -->
+	</body>
 
 </html>

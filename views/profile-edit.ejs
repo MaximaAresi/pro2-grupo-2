@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/headerLogueado.ejs') %>
+			<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Editar mi perfil</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				
-				<form class = "formModificado" action="/users/profile/id" method="GET"> 
-					<label for="usuario">Ingrese su nuevo nombre de usuario: <input id="usuario" type="text" required name="usuario" value=""> </label>
-					<label for="contraseña">Ingrese su nueva contraseña: <input id="contreseña" type="text" required name="contreseña" value=""> </label>
-					<label for="email">Ingrese su nuevo mail: <input id="email" type="email" required name="email" value=""> </label> 
-					<label for="fdp">Ingrese su nueva foto de perfil: <input id="fdp" type="file" required name="fdp" value=""></label>
-					<input type="submit" value="Submit" />
-				</form>
-				
-			</h2>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Editar mi perfil</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
+
+						<form class="formModificado" action="/users/profile/id" method="GET">
+							<label for="usuario">Ingrese su nuevo nombre de usuario: <input id="usuario" type="text"
+									required name="usuario" value=""> </label>
+							<label for="contraseña">Ingrese su nueva contraseña: <input id="contreseña" type="text"
+									required name="contreseña" value=""> </label>
+							<label for="email">Ingrese su nuevo mail: <input id="email" type="email" required
+									name="email" value=""> </label>
+							<label for="fdp">Ingrese su nueva foto de perfil: <input id="fdp" type="file" required
+									name="fdp" value=""></label>
+							<input type="submit" value="Submit" />
+						</form>
+
+					</h2>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer.ejs') %>
+						<!-- /footer -->
+	</body>
 
 </html>

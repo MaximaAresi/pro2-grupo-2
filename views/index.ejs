@@ -24,7 +24,7 @@
 					<% for (let i=0; i < 4; i++ ) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
-								<a href="/products/detalle/">
+								<a href="/products/detalle/id">
 									<figure class="product-box_image">
 										<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
 											alt="<%= db.productos[i].nombreProducto %>">
@@ -57,7 +57,7 @@
 					<% for (let i=5; i < 9; i++ ) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
-								<a href="/products/detalle/">
+								<a href="/products/detalle/id">
 									<figure class="product-box_image">
 										<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
 											alt="<%= db.productos[i].nombreProducto %>">
@@ -84,4 +84,5 @@
 			<%- include('./partials/footer.ejs') %>
 				<!-- /footer -->
 	</body>
+
 </html>

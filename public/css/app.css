@@ -11,7 +11,7 @@
   --light-gray: #ebebeb;
   --blue: #263b74;
   --base-font-family: 'Verdana';
-  --base-font-family-titles: "Helvetica"
+  --base-font-family-titles: "Helvetica";
 }
 
 
@@ -42,7 +42,7 @@ ol {
 
 a {
   display: inline-block;
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
 }
 
@@ -71,36 +71,37 @@ hr {
 }
 
 /*.formModificado {*/
- 
-  .formModificado {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-  }
-  
-  label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #336196;
-    color: white;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #336196;
-  }
+
+.formModificado {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #336196;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #164276;
+}
 
 /*====== Main Header ======*/
 .main-header {
@@ -219,7 +220,6 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: inherit;
-  font-family: var(--base-font-family-titles);
 }
 
 .product-box {
@@ -248,7 +248,6 @@ hr {
 
 .product-box_data h2 {
   font-size: 2.4em;
-  font-family: var(--base-font-family-titles);
   font-weight: 300;
   margin: 0;
 }
@@ -380,6 +379,7 @@ hr {
 .product-detail-description a {
   font-weight: bold;
 }
+
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;

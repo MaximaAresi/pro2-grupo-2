@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header.ejs') %>
+			<!-- /Header -->
 
-	<!-- product detail -->
-	
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title">
-				<%= db.productos[0].nombreProducto %>
-			</h2> 
-			<p class="product-detail-description">
-				<a href="/products/add">Editar</a>
-			</p>
-		</div>
-	
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img class="product-detail-img" src="<%= db.productos[0].fotoProducto %>"
-						alt="<%= db.productos[0].nombreProducto %>">
+			<!-- product detail -->
+
+			<div class="container products-wrapper">
+				<div class="d-flex align-items-center">
+					<h2 class="products-title">
+						<%= db.productos[0].nombreProducto %>
+					</h2>
 					<p class="product-detail-description">
-						Descripción del producto: <%= db.productos[0].descripcionProducto %></p>
-				</article>
-					<div class="col-12 col-lg-4">
-						<section class="comments">
-							<% for(let i=0; i<3; i++) { %>
+						<a href="/products/add">Editar</a>
+					</p>
+				</div>
 
-								<article>
-									<img src="<%= db.productos[0].comentarios_Producto[i].img_perfil %>">
-									<div class="data">
-										<p class="user">
-										<strong> <a href="/users/profile/id"> Usuario: <%= db.productos[0].comentarios_Producto[i].nombre_usuario %> </a> </strong>
-										<%= db.productos[0].comentarios_Producto[i].texto_comentario %> 
-										</p>
-									</div>
-								</article>
-									<hr></hr>
-							<% } %>
-							<form class="form" action="/products/detalle/" method="GET">
-								<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-								<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-							</form>
-						</section>
+				<div class="product-detail">
+					<div class="row">
+						<article class="col-12 col-lg-8 product-detail-info">
+							<img class="product-detail-img" src="<%= db.productos[0].fotoProducto %>"
+								alt="<%= db.productos[0].nombreProducto %>">
+							<p class="product-detail-description">
+								Descripción del producto: <%= db.productos[0].descripcionProducto %>
+							</p>
+						</article>
+						<div class="col-12 col-lg-4">
+							<section class="comments">
+								<% for(let i=0; i<3; i++) { %>
+
+									<article>
+										<img src="<%= db.productos[0].comentarios_Producto[0].img_perfil %>">
+										<div class="data">
+											<p class="user">
+												<strong> <a href="/users/profile/id"> @<%=
+															db.productos[0].comentarios_Producto[i].nombre_usuario %>
+															:</a> </strong>
+												<%= db.productos[0].comentarios_Producto[i].texto_comentario %>
+											</p>
+										</div>
+									</article>
+									<hr>
+									</hr>
+									<% } %>
+										<form class="form" action="/products/detalle/id" method="GET">
+											<input class="form-input" type="text" value=""
+												placeholder="Agregar comentario">
+											<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+										</form>
+							</section>
+						</div>
+
 					</div>
-					
+				</div>
 			</div>
-		</div>
-	</div>
 
-	<!-- /product detail -->
+			<!-- /product detail -->
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
+			<!-- footer -->
+			<%- include('./partials/footer.ejs') %>
+				<!-- /footer -->
 
-</body>	
+	</body>
+
 </html>

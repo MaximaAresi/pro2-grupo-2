@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/headerLogueado.ejs') %>
+			<!-- /Header -->
 
-	<!-- Datos del usuario -->
-	<section class="info-usuario container products-wrapper">
-		<div class="row">
-			<div class="img-container offset-3 col-2">
-				 <img src="<%= db.usuario.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
-			</div>
-			<div class="data-container col-6">
-				<div class="d-flex align-items-center ">
-					<h1 class="main-title-username"> <p>@<%= db.usuario.usuario %> </p> 
-						<a href="/users/id/edit">
-							<i class="fas fa-cog ruedita"></i>
-						</a>
-					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a> <!--agrego un event listener para que cambie a seguido o lo mando a otra vista?-->
+			<!-- Datos del usuario -->
+			<section class="info-usuario container products-wrapper">
+				<div class="row">
+					<div class="img-container offset-3 col-2">
+						<img src="<%= db.usuario.fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+					</div>
+					<div class="data-container col-6">
+						<div class="d-flex align-items-center ">
+							<h1 class="main-title-username">
+								<p>@<%= db.usuario.usuario %>
+								</p>
+								<a href="/users/id/edit">
+									<i class="fas fa-cog ruedita"></i>
+								</a>
+							</h1>
+							<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+							<!--agrego un event listener para que cambie a seguido o lo mando a otra vista?-->
+						</div>
+						<div>
+							<h3 class='subtitle-email'>
+								<%= db.usuario.email %>
+							</h3>
+						</div>
+						<div>
+							<ul class="">
+								<li>8 productos</li>
+								<li>200 seguidores</li>
+								<li>300 comentarios</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div>
-					<h3 class='subtitle-email'><%= db.usuario.email %></h3>
-				</div>
-				<div>
-					<ul class="">
-						<li>8 productos</li>
-						<li>200 seguidores</li>
-						<li>300 comentarios</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /Datos del usuario -->
+			</section>
+			<!-- /Datos del usuario -->
 
-	<!-- Mis productos -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
-			</div>
-			<!-- Show mis productos -->
-			<% for (let i=0; i<8; i++) {%>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/products/detalle">
-						<figure class="product-box_image">
-							<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
+			<!-- Mis productos -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Mis productos</h2>
+					</div>
+					<!-- Show mis productos -->
+					<% for (let i=0; i<8; i++) {%>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="/products/detalle/id">
+									<figure class="product-box_image">
+										<img class="imgalt" src="<%= db.productos[i].fotoProducto %>"
 											alt="<%= db.productos[i].nombreProducto %>">
-						</figure>
-						<article class="product-box_data">
-							<h2> 
-								<%= db.productos[i].nombreProducto %>
-							</h2>
-							<p>
-								<%= db.productos[i].descripcionProducto %>
-							</p>
-							<p> Comentarios:
-								<%= db.productos[i].comentarios_Producto.length %>
-							</p>
-						</article>
-					</a>
-				</section>
+									</figure>
+									<article class="product-box_data">
+										<h2>
+											<%= db.productos[i].nombreProducto %>
+										</h2>
+										<p>
+											<%= db.productos[i].descripcionProducto %>
+										</p>
+										<p> Comentarios:
+											<%= db.productos[i].comentarios_Producto.length %>
+										</p>
+									</article>
+								</a>
+							</section>
+						</div>
+						<% } %>
+				</div>
 			</div>
-			<% } %>
-		</div>
-	</div>
-	<!-- /Mis productos -->
+			<!-- /Mis productos -->
 
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>	
+			<!-- footer -->
+			<%- include('./partials/footer.ejs') %>
+				<!-- /footer -->
+	</body>
+
 </html>

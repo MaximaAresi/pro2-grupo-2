@@ -17,17 +17,17 @@ let db = {
                 {
                     nombre_usuario: 'maresi',
                     texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'Divino!',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'vic_molinari',
                     texto_comentario: 'Muy contenta con la compra!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -39,18 +39,18 @@ let db = {
             comentarios_Producto: [
                 {
                     nombre_usuario: 'maresi',
-                    texto_comentario: 'Estoy super contenta!!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
                     texto_comentario: 'Divino!',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'vic_molinari',
                     texto_comentario: 'Muy contenta con la compra!',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -62,18 +62,18 @@ let db = {
             comentarios_Producto: [
                 {
                     nombre_usuario: 'maresi',
-                    texto_comentario: 'Lindo diseño pero la calidad no tanto :(',
-                    img_perfil: '/images/fotoUsuario1.png'
-                },
-                {
-                    nombre_usuario: 'vic_molinari',
-                    texto_comentario: 'No me convencio del todo',
-                    img_perfil: '/images/fotoUsuario2.png'
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
-                    texto_comentario: 'Fea la tela',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -84,19 +84,19 @@ let db = {
             precioProducto: "$12.000-.",
             comentarios_Producto: [
                 {
+                    nombre_usuario: 'maresi',
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
                     nombre_usuario: 'vic_molinari',
-                    texto_comentario: 'De las mejores compras de mi vida <3',
-                    img_perfil: '/images/fotoUsuario2.png'
-                },
-                {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'Muy lindo!',
-                    img_perfil: '/images/fotoUsuario3.png'
-                },
-                {
-                    nombre_usuario: 'bgomez',
-                    texto_comentario: 'Lo recomiendo',
-                    img_perfil: '/images/fotoUsuario4.png'
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -107,19 +107,19 @@ let db = {
             precioProducto: "$10.000-.",
             comentarios_Producto: [
                 {
-                    nombre_usuario: 'vic_molinari',
-                    texto_comentario: 'No me gustó!',
-                    img_perfil: '/images/fotoUsuario2.png'
-                },
-                {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'No lo recomiendo',
-                    img_perfil: '/images/fotoUsuario3.png'
-                },
-                {
                     nombre_usuario: 'maresi',
-                    texto_comentario: 'No es lo que me esperaba :(',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -130,19 +130,19 @@ let db = {
             precioProducto: "$48.000-.",
             comentarios_Producto: [
                 {
-                    nombre_usuario: 'vic_molinari',
-                    texto_comentario: 'Espectacular!',
-                    img_perfil: '/images/fotoUsuario2.png'
-                },
-                {
                     nombre_usuario: 'maresi',
-                    texto_comentario: 'Muy bueno!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'Gran compra!',
-                    img_perfil: '/images/fotoUsuario3.png'
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -153,19 +153,19 @@ let db = {
             precioProducto: "$56.000-.",
             comentarios_Producto: [
                 {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'Super lindo!',
-                    img_perfil: '/images/fotoUsuario3.png'
-                },
-                {
                     nombre_usuario: 'maresi',
-                    texto_comentario: 'Muy bueno!',
-                    img_perfil: '/images/fotoUsuario1.png'
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
-                    nombre_usuario: 'bgomez',
-                    texto_comentario: 'Lo recomiendo',
-                    img_perfil: '/images/fotoUsuario4.png'
+                    nombre_usuario: 'luis_n',
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -175,19 +175,19 @@ let db = {
             fotoProducto: '/images/fotoProducto8.png',
             comentarios_Producto: [
                 {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'No lo volvería a comprar!',
-                    img_perfil: '/images/fotoUsuario3.png'
+                    nombre_usuario: 'maresi',
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
-                    texto_comentario: 'No me gusto mucho!',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
-                    nombre_usuario: 'bgomez',
-                    texto_comentario: 'No lo recomiendo',
-                    img_perfil: '/images/fotoUsuario4.png'
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -197,19 +197,19 @@ let db = {
             fotoProducto: '/images/fotoProducto9.png',
             comentarios_Producto: [
                 {
-                    nombre_usuario: 's_villar',
+                    nombre_usuario: 'maresi',
                     texto_comentario: 'Muy lindo producto!',
-                    img_perfil: '/images/fotoUsuario3.png'
-                },
-                {
-                    nombre_usuario: 'bgomez',
-                    texto_comentario: 'Divino!',
-                    img_perfil: '/images/fotoUsuario4.png'
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
-                    texto_comentario: 'Super bueno!',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },
@@ -219,19 +219,19 @@ let db = {
             fotoProducto: '/images/fotoProducto10.png',
             comentarios_Producto: [
                 {
-                    nombre_usuario: 's_villar',
-                    texto_comentario: 'Muy lindo! Lo vovería a comprar!!',
-                    img_perfil: '/images/fotoUsuario3.png'
-                },
-                {
-                    nombre_usuario: 'bgomez',
-                    texto_comentario: 'Me encanto!',
-                    img_perfil: '/images/fotoUsuario4.png'
+                    nombre_usuario: 'maresi',
+                    texto_comentario: 'Muy lindo producto!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 },
                 {
                     nombre_usuario: 'luis_n',
-                    texto_comentario: 'Super bueno!',
-                    img_perfil: '/images/fotoUsuario5.png'
+                    texto_comentario: 'Divino!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
+                },
+                {
+                    nombre_usuario: 'vic_molinari',
+                    texto_comentario: 'Muy contenta con la compra!',
+                    img_perfil: '/images/users/profile-pic.jpeg'
                 }
             ]
         },

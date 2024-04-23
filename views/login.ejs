@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header.ejs') %> 
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header.ejs') %>
+			<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-		
-				<form class="formModificado" method="GET" action='/'>
-					
-					<label for="usuario">Usuario:</label>
-					<input type="text" id="usuario" name="usuario">
-		
-					<label for="contraseña">Contraseña:</label>
-					<input type="password" id="contraseña" name="contraseña">
-		
-					<input type="submit" value="Log In">
-				</form>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Ingresar</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
 
-			</h2>
+						<form class="formModificado" method="GET" action='/'>
+
+							<label for="usuario">Usuario:</label>
+							<input type="text" id="usuario" name="usuario">
+
+							<label for="contraseña">Contraseña:</label>
+							<input type="password" id="contraseña" name="contraseña">
+
+							<input type="submit" value="Log In">
+						</form>
+
+					</h2>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer.ejs') %> 
-	<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer.ejs') %>
+						<!-- /footer -->
+	</body>
 
 </html>
