@@ -1,4 +1,4 @@
-const db =  require('../db/info')
+const db =  require('../database/models') /*../db/info */
 
 
 let usersController = {
