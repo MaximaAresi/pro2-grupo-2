@@ -109,7 +109,7 @@ INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario)
 VALUES 				(DEFAULT, 1, 1, "Muy lindo producto!");  
 
 INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
-VALUES 				(DEFAULT, 1, 2, "Estoy super contenta!!",);  
+VALUES 				(DEFAULT, 1, 2, "Estoy super contenta!!");  
 
 INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario ) 
 VALUES 				(DEFAULT, 1, 3, "Lindo diseño pero la calidad no tanto :(");  
