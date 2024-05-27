@@ -41,9 +41,7 @@ CREATE TABLE comentarios (
 id					INT					UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 usuarios_id			INT					UNSIGNED, 
 producto_id			INT 				UNSIGNED,
-nombre  			VARCHAR(250)		NOT NULL,
 texto_comentario	TEXT				NOT NULL,
-img_perfil			VARCHAR(250)		NOT NULL,
 createdAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ,
 updatedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt			TIMESTAMP			NULL
@@ -107,93 +105,93 @@ VALUES 					(DEFAULT, 	"fotoProducto10.png", "Chaleco", 		"Chaleco color beige",
 
 
 /* AGREGAR REGISTROS EN COMENTARIOS */
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 1, "nombreUsuario1", "Muy lindo producto!", "fotoUsuario1.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 1, 1, "Muy lindo producto!");  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 2, "nombreUsuario1", "Estoy super contenta!!", "fotoUsuario1.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 1, 2, "Estoy super contenta!!",);  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 3, "nombreUsuario1", "Lindo diseño pero la calidad no tanto :(", "fotoUsuario1.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario ) 
+VALUES 				(DEFAULT, 1, 3, "Lindo diseño pero la calidad no tanto :(");  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 4, "nombreUsuario2", "De las mejores compras de mi vida <3", "fotoUsuario2.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 4, "De las mejores compras de mi vida <3");  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 5, "nombreUsuario2", "No me gustó!", "fotoUsuario2.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 5, "No me gustó!");  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 6, "nombreUsuario2", "Espectacular!", "fotoUsuario2.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 6, "Espectacular!");  
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 7, "nombreUsuario3", "Super lindo!!", "fotoUsuario3.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 7, "Super lindo!!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 8, "nombreUsuario3", "No lo volvería a comprar!", "fotoUsuario3.png"); 
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 8, "No lo volvería a comprar!"); 
  
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 9, "nombreUsuario3", "Muy lindo producto!", "fotoUsuario3.png");  
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 9, "Muy lindo producto!");  
  
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 10, "nombreUsuario3", "Muy lindo! Lo vovería a comprar!!", "fotoUsuario3.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 10, "Muy lindo! Lo vovería a comprar!!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 4, 9, "nombreUsuario4", "Divino! ", "fotoUsuario4.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 4, 9, "Divino! ");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 4, 10, "nombreUsuario4", "Me encanto!", "fotoUsuario4.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 4, 10, "Me encanto!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 9, "nombreUsuario5", "Super bueno!", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 9, "Super bueno!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 8, "nombreUsuario5", "No me gusto mucho", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 8, "No me gusto mucho");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 2, "nombreUsuario5", "Divino!", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 2, "Divino!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 1, "nombreUsuario5", "Divino!", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 1, "Divino!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 1, "nombreUsuario2", "Muy contenta con la compra!", "fotoUsuario2.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 1, "Muy contenta con la compra!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 2, "nombreUsuario2", "Muy contenta con la compra!", "fotoUsuario2.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 2, "Muy contenta con la compra!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 2, 3, "nombreUsuario2", "No me convencio del todo", "fotoUsuario2.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 2, 3, "No me convencio del todo");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 3, "nombreUsuario5", "Fea la tela", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 3, "Fea la tela");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 4, "nombreUsuario3", "Muy lindo!", "fotoUsuario3.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 4, "Muy lindo!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 4, 4, "nombreUsuario4", "Lo recomiendo", "fotoUsuario4.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 4, 4, "Lo recomiendo");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 5, "nombreUsuario3", "No lo recomiendo", "fotoUsuario3.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 5, "No lo recomiendo");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 5, "nombreUsuario1", "No es lo que me esperaba :(", "fotoUsuario1.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 1, 5, "No es lo que me esperaba :(");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 6, "nombreUsuario1", "Muy bueno!", "fotoUsuario1.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 1, 6, "Muy bueno!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 3, 6, "nombreUsuario3", "Gran compra!", "fotoUsuario3.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 3, 6,  "Gran compra!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 1, 7, "nombreUsuario1", "Muy bueno!", "fotoUsuario1.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 1, 7, "Muy bueno!");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 4, 7, "nombreUsuario4", "Lo recomiendo", "fotoUsuario4.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 4, 7,  "Lo recomiendo");
 
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 4, 8, "nombreUsuario4", "No lo recomiendo", "fotoUsuario4.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 4, 8, "No lo recomiendo");
 
-INSERT INTO comentarios (id, usuarios_id, producto_id, nombre, texto_comentario, img_perfil) 
-VALUES 				(DEFAULT, 5, 10, "nombreUsuario5", "Super bueno!", "fotoUsuario5.png");
+INSERT INTO comentarios (id, usuarios_id, producto_id, texto_comentario) 
+VALUES 				(DEFAULT, 5, 10, "Super bueno!");
