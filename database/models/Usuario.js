@@ -24,7 +24,7 @@ module.exports = function (sequelize, dataTypes) {
         fotoPerfil: {
             type: dataTypes.STRING
         },
-        ceratedAt: {
+        createdAt: {
             type: dataTypes.DATE
         },
         updatedAt: {
