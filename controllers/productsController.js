@@ -1,5 +1,11 @@
 const db =  require('../database/models')/*../db/info */
 
+let filtrado = {
+    include: [
+        {association:"comentarios"}
+    ]
+}
+
 let productsController = {
     detalle: function (req, res) {
         return res.render("product", {db: db});
