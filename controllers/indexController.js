@@ -9,6 +9,12 @@ let indexController = {
             return res.send(response)
         })
 
+        db.Usuario.findAll() //poner filtrado dentro de los parentesis
+        .then(function(response) {
+            return res.send(response)
+        })
+
+
     }
 }
 
