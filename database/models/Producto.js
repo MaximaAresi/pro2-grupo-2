@@ -1,7 +1,7 @@
 module.exports = function (sequelize, dataTypes) {
 
-    /* alias del modelo de productos --> "Productos"*/
-    let alias = "Productos";
+    /* alias del modelo de producto --> "Productos"*/
+    let alias = "Producto";
 
     /* configuracion de las columnas */
     let cols = {
@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        fotoProdcto: {
+        fotoProducto: {
             type: dataTypes.STRING
         },
         nombreProducto: {
@@ -41,7 +41,7 @@ module.exports = function (sequelize, dataTypes) {
     }
 
     /* definir el modelo */
-    let Productos = sequelize.define(alias, cols, config)
+    let Producto = sequelize.define(alias, cols, config)
 
-    return Productos;
+    return Producto;
 }
