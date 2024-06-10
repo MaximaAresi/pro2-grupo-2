@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let session = require('express-session');
+const db = require('./database/models');
 
 
 /* REQUERIR ROUTERS */
@@ -22,6 +24,50 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/* CONFIGURACIONES */
+
+app.use(session({
+  secret: "Mix and Match",
+  resave: false,
+  saveUninitialized: true
+}));
+
+/* SESSION --> LOCALS */
+
+app.use(function (req, res, next) {
+  if (req.session.user != undefined) {
+    // res.locals.user = req.session.user;
+    return res.redirect("/") // si encuentra el usuario, que lo redirija a home
+  } else {
+    return res.render("/users/login")
+  }
+  return next();
+}
+);
+
+app.use(function (req, res, next) {
+
+  if (req.cookies.userId != undefined && req.session.user == undefined) {
+    let userId = req.cookies.userId; // 
+
+    db.User.findByPk(userId)
+      .then((result) => {
+        req.session.user = result;
+        res.locals.user = result;
+        return next();
+      }).catch((err) => {
+        return console.log(err);
+      });
+    /* buscar el id en la db */
+  } else {
+    return next();
+  }
+
+  // .catch después del .then? o solo el next()?
+})
+
+////////////
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
