@@ -1,3 +1,4 @@
+const { Association } = require('sequelize')
 const db =  require('../database/models') /*../db/info */
 
 let indexController = {
@@ -17,5 +18,8 @@ let indexController = {
 
     }
 }
+
+
+
 
 module.exports = indexController;
