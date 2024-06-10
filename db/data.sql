@@ -7,10 +7,10 @@ CREATE TABLE usuarios (
 /* 	nombreColumna 		tipoDato 		Restricciones */
     id  				INT 			UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     usuario				VARCHAR(250)	NOT NULL,
-    mail 				VARCHAR(250) 	NOT NULL,
+    mail 				VARCHAR(250) 	NOT NULL UNIQUE,
     contrasenia         VARCHAR(250) 	NOT NULL,
     fecha               DATE 			NOT NULL,
-    DNI 				INT 			NOT NULL,
+    dni 				INT 			NOT NULL,
     fotoPerfil 			VARCHAR(250) 	NOT NULL,
     createdAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ,
     updatedAt			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -56,19 +56,19 @@ add FOREIGN KEY (producto_id) REFERENCES productos(id);
 
 
 /* AGREGAR REGISTROS EN USUARIOS */
-INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, DNI, fotoPerfil, createdAt, updatedAt, deletedAt) 
+INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, dni, fotoPerfil, createdAt, updatedAt, deletedAt) 
 VALUES(DEFAULT, "maresi" ,"maresilavalle@udesa.edu.ar", "Clave123", "2005-05-26", 46754423, "foto1.png", DEFAULT, DEFAULT, DEFAULT);
     
-INSERT INTO usuarios  (id, usuario, mail, contrasenia, fecha, DNI, fotoPerfil, createdAt, updatedAt, deletedAt) 
+INSERT INTO usuarios  (id, usuario, mail, contrasenia, fecha, dni, fotoPerfil, createdAt, updatedAt, deletedAt) 
 VALUES(DEFAULT, "vic_molinari","vmolinari@udesa.edu.ar", "Clave1234", "2005-01-11", 12345678, "foto2.png", DEFAULT, DEFAULT, DEFAULT);
     
-INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, DNI, fotoPerfil, createdAt, updatedAt, deletedAt) 
+INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, dni, fotoPerfil, createdAt, updatedAt, deletedAt) 
 VALUES(DEFAULT, "s_villar","svillar@udesa.edu.ar", "Clave12345", "2005-01-30", 87654321, "foto3.png", DEFAULT, DEFAULT, DEFAULT);
     
-INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, DNI, fotoPerfil, createdAt, updatedAt, deletedAt) 
+INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, dni, fotoPerfil, createdAt, updatedAt, deletedAt) 
 VALUES(DEFAULT, "bgomez","bgomez@udesa.edu.ar", "Clave123456", "2005-01-27", 18479834, "foto4.png", DEFAULT, DEFAULT, DEFAULT);
     
-INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, DNI, fotoPerfil, createdAt, updatedAt, deletedAt) 
+INSERT INTO usuarios (id, usuario, mail, contrasenia, fecha, dni, fotoPerfil, createdAt, updatedAt, deletedAt) 
 VALUES(DEFAULT, "luis_n", "lnavas@udesa.edu.ar", "Clave1234567", "2005-02-27", 18678902, "foto5.png", DEFAULT, DEFAULT, DEFAULT);
 
 
