@@ -38,10 +38,14 @@ module.exports = function (sequelize, dataTypes) {
         tableName: "productos",
         timestamps: false,
         underscored: false
+    
+    }
+     /* definir el modelo */   
+    let Producto = sequelize.define(alias, cols, config);
+    
+    
+    return Producto;
     }
 
-    /* definir el modelo */
-    let Producto = sequelize.define(alias, cols, config)
+    
 
-    return Producto;
-}
