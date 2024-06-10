@@ -40,9 +40,9 @@ app.use(function (req, res, next) {
     // res.locals.user = req.session.user;
     return res.redirect("/") // si encuentra el usuario, que lo redirija a home
   } else {
-    return res.render("/users/login")
+    return next();
   }
-  return next();
+  
 }
 );
 

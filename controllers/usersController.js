@@ -9,10 +9,10 @@ let usersController = {
         return res.render("register");
     },
     profile: function(req, res) {
-        return res.render("profile", {db: db});
+        return res.render("profile", );
     },
     profileEdit: function(req, res) {
-        return res.render("profile-edit", {db: db});
+        return res.render("profile-edit");
     }
 }
 
