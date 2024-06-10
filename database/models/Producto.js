@@ -40,12 +40,19 @@ module.exports = function (sequelize, dataTypes) {
         underscored: false
     
     }
-     /* definir el modelo */   
-    let Producto = sequelize.define(alias, cols, config);
-    
-    
-    return Producto;
+
+    /* definir el modelo */
+    let Producto = sequelize.define(alias, cols, config)
+
+    Producto.associate = function (models) {
+        Producto.hasMany(models.Comentario, {
+            as: "comentarios"
+        }),
+            Producto.belongsTo(models.Usuario, {
+                as: "usuarios",
+                foreignKey: "id_usuario"
+            })
+
+        return Producto;
     }
-
-    
-
+}
