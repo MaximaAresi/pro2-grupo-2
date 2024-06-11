@@ -5,7 +5,12 @@
 
 	<body>
 		<!-- Header -->
-		<%- include('./partials/headerLogueado.ejs') %>
+		<%if (locals.user != undefined) { %>
+			<%- include (“./partials/headerLogueado”) %>
+		 <% }else{%>
+		   <%- include (“./partials/headerDeslogueado”)%> <!--hacer un headerDeslogueado-->
+		 <% } %>
+		<!-- <%- include('./partials/header.ejs') %>-->
 			<!-- /Header -->
 
 			<!-- Novedades -->

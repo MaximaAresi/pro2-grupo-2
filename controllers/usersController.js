@@ -13,7 +13,13 @@ let usersController = {
     },
     profileEdit: function(req, res) {
         return res.render("profile-edit");
+    },
+    logout: function(req, res) {
+        req.session.destroy();
+        res.clearCookie("userId") //chequear si esta bien lo de userId
+        return res.redirect("/") //fijarse si aca poner el redirect a la pagina (ejs) de login
     }
 }
+
 
 module.exports = usersController;
