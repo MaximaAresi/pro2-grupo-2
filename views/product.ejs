@@ -5,70 +5,74 @@
 
 	<body>
 		<!-- Header -->
-		<%if (locals.user != undefined) { %>
-			<%- include (“./partials/headerLogueado”) %>
-		 <% }else{%>
-		   <%- include (“./partials/headerDeslogueado”)%> <!--hacer un headerDeslogueado-->
-		 <% } %>
-		<!-- <%- include('./partials/header.ejs') %>-->
-			<!-- /Header -->
+		<%if (locals.user !=undefined) { %>
+			<%- include ('./partials/headerLogueado') %>
+				<% }else{%>
+					<%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
+						<% } %>
 
-			<!-- product detail -->
+							<!-- /Header -->
 
-			<div class="container products-wrapper">
-				<div class="d-flex align-items-center">
-					<h2 class="products-title">
-						<%= db.productos[0].nombreProducto %>
-					</h2>
-					<p class="product-detail-description">
-						<a href="/products/add">Editar</a>
-					</p>
-				</div>
+							<!-- product detail -->
 
-				<div class="product-detail">
-					<div class="row">
-						<article class="col-12 col-lg-8 product-detail-info">
-							<img class="product-detail-img" src="<%= db.productos[0].fotoProducto %>"
-								alt="<%= db.productos[0].nombreProducto %>">
-							<p class="product-detail-description">
-								Descripción del producto: <%= db.productos[0].descripcionProducto %>
-							</p>
-						</article>
-						<div class="col-12 col-lg-4">
-							<section class="comments">
-								<% for(let i=0; i<3; i++) { %>
+							<div class="container products-wrapper">
+								<div class="d-flex align-items-center">
+									<h2 class="products-title">
+										<%= producto.nombreProducto %>
+									</h2>
+									<p class="product-detail-description">
+										<a href="/products/add">Editar</a>
+									</p>
+								</div>
 
-									<article>
-										<img src="<%= db.productos[0].comentarios_Producto[0].img_perfil %>">
-										<div class="data">
-											<p class="user">
-												<strong> <a href="/users/profile/id"> @<%=
-															db.productos[0].comentarios_Producto[i].nombre_usuario %>
-															:</a> </strong>
-												<%= db.productos[0].comentarios_Producto[i].texto_comentario %>
+								<div class="product-detail">
+									<div class="row">
+										<article class="col-12 col-lg-8 product-detail-info">
+											<img class="product-detail-img" src="/images/<%= producto.fotoProducto %>"
+												alt="<%= producto.nombreProducto %>">
+											<p class="product-detail-description">
+												Descripción del producto: <%= producto.descripcionProducto %>
 											</p>
+										</article>
+										<div class="col-12 col-lg-4">
+											<section class="comments">
+												<% for(let i=0; i<comentarios.length; i++) { %>
+
+													<article>
+														<% console.log(producto) %>
+															<img
+																src="/images/users/<%= comentarios[i].usuarios.fotoPerfil %>">
+															<div class="data">
+																<p class="user">
+																	<strong> <a
+																			href="/users/profile/<%= comentarios[i].usuarios.id %>">
+																			@<%=comentarios[i].usuarios.usuario%>
+																				:</a> </strong>
+																	<%= comentarios[i].texto_comentario %>
+																</p>
+															</div>
+													</article>
+													<hr>
+													</hr>
+													<% } %>
+														<form class="form" action="/products/detalle/id" method="GET">
+															<input class="form-input" type="text" name="" value=""
+																placeholder="Agregar comentario">
+															<button type="submit" class="buy-now-button">AGREGAR
+																COMENTARIO</button>
+														</form>
+											</section>
 										</div>
-									</article>
-									<hr>
-									</hr>
-									<% } %>
-										<form class="form" action="/products/detalle/id" method="GET">
-											<input class="form-input" type="text" name = "" value=""
-												placeholder="Agregar comentario">
-											<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-										</form>
-							</section>
-						</div>
 
-					</div>
-				</div>
-			</div>
+									</div>
+								</div>
+							</div>
 
-			<!-- /product detail -->
+							<!-- /product detail -->
 
-			<!-- footer -->
-			<%- include('./partials/footer.ejs') %>
-				<!-- /footer -->
+							<!-- footer -->
+							<%- include('./partials/footer.ejs') %>
+								<!-- /footer -->
 
 	</body>
 

@@ -13,15 +13,15 @@ module.exports = function (sequelize, dataTypes) {
         producto_id: {
             type: dataTypes.INTEGER,
         },
-        nombre: {
-            type: dataTypes.STRING
-        },
+        // nombre: {
+        //     type: dataTypes.STRING
+        // },
         texto_comentario: {
             type: dataTypes.STRING
         },
-        img_perfil: {
-            type: dataTypes.STRING
-        },
+        // img_perfil: {
+        //     type: dataTypes.STRING
+        // },
         createdAt: {
             type: dataTypes.DATE
         },
@@ -31,8 +31,6 @@ module.exports = function (sequelize, dataTypes) {
         deletedAt: {
             type: dataTypes.DATE
         }
-
-
     };
 
     let config = {
@@ -47,6 +45,11 @@ module.exports = function (sequelize, dataTypes) {
             as: "productos",
             foreignKey: "producto_id"
         });
+
+        Comentario.belongsTo(models.Usuario, {
+            as: "usuarios",
+            foreignKey: "usuarios_id"
+        })
 
     }
 

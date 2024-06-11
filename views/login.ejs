@@ -5,40 +5,39 @@
 
 	<body>
 		<!-- Header -->
-		<%if (locals.user != undefined) { %>
-			<%- include (“./partials/headerLogueado”) %>
-		 <% }else{%>
-		   <%- include (“./partials/headerDeslogueado”)%> <!--hacer un headerDeslogueado-->
-		 <% } %>
-		<!-- <%- include('./partials/header.ejs') %>-->
-			<!-- /Header -->
+		<%if (locals.user !=undefined) { %>
+			<%- include ('./partials/headerLogueado') %>
+				<% }else{%>
+					<%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
+						<% } %>
+							<!-- /Header -->
 
-			<!-- Novedades -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Ingresar</h2>
-					</div>
-					<!-- Show the "ultimos" products -->
-					<h2 class="col-12">
+							<!-- Novedades -->
+							<div class="container products-wrapper">
+								<div class="row">
+									<div class="col-12">
+										<h2 class="products-title">Ingresar</h2>
+									</div>
+									<!-- Show the "ultimos" products -->
+									<h2 class="col-12">
 
-						<form class="formModificado" method="GET" action='/'>
+										<form class="formModificado" method="POST" action='/users/login'>
 
-							<label for="usuario">Usuario:</label>
-							<input type="text" id="usuario" name="usuario">
+											<label for="usuario">Usuario:</label>
+											<input type="text" id="usuario" name="usuario">
 
-							<label for="contraseña">Contraseña:</label>
-							<input type="password" id="contraseña" name="contraseña">
+											<label for="contraseña">Contraseña:</label>
+											<input type="password" id="contraseña" name="contraseña">
 
-							<input type="submit" value="Log In">
-						</form>
+											<input type="submit" value="Log In">
+										</form>
 
-					</h2>
+									</h2>
 
 
-					<!-- footer -->
-					<%- include('./partials/footer.ejs') %>
-						<!-- /footer -->
+									<!-- footer -->
+									<%- include('./partials/footer.ejs') %>
+										<!-- /footer -->
 	</body>
 
 </html>
