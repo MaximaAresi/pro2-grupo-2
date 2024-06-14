@@ -9,6 +9,8 @@ var indexController = require('../controllers/indexController');
 // RUTA: /products/
 router.get('/', indexController.main); /* todos los productos */
 
+router.get('/search-results', indexController.descripcion);
+
 // RUTA: /products/detalle/[id]
 router.get('/detalle/:id', productsController.detalle);
 
