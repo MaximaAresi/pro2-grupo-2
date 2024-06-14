@@ -14,11 +14,16 @@ let indexController = {
   descripcion: function (req, res) {
     db.Productos.findAll({
       where: {
-        searchResults:{[Op.or]:[{descripcionProducto:'%%'}, {nombreProducto:'%%'}]}
+        searchResults:{[Op.or]:[{descripcionProducto:'%%'}, {nombreProducto:'%%'}]},
+        order: ["createdAt", "DESC"]
       }
     })
-      .then(function (productos) {
-        res.render ("search-results", {productos: productos})
+      .then(function (productos) { 
+        if (searchResults = undefined) {
+          res.render ("search-results", {productos: productos})
+      }else{
+        return res.send("No hay resultados para su criterio de búsqueda");
+      }
       })
   }
 };
