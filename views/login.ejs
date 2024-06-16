@@ -23,11 +23,18 @@
 
 										<form class="formModificado" method="POST" action='/users/login'>
 
-											<label for="usuario">Usuario:</label>
-											<input type="text" id="usuario" name="usuario">
+											<label for="email">E-mail:</label>
+											<input type="text" id="email" name="email">
+											<!-- mensaje de error -->
 
-											<label for="contraseña">Contraseña:</label>
-											<input type="password" id="contraseña" name="contraseña">
+											<label for="contrasenia">Contraseña:</label>
+											<input type="password" id="contrasenia" name="contrasenia">
+											<!-- mensaje de error -->
+
+											<div>
+												<label for="recordarme">Recordarme </label>
+												<input type="checkbox" name="recordarme" value="recordarme">
+											</div>
 
 											<input type="submit" value="Log In">
 										</form>

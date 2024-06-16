@@ -33,25 +33,25 @@ app.use(session({
   saveUninitialized: true
 }));
 
-/* SESSION --> LOCALS */
 
 app.use(function (req, res, next) {
   if (req.session.user != undefined) {
-    // res.locals.user = req.session.user;
-    return res.redirect("/") // si encuentra el usuario, que lo redirija a home
+    res.locals.user = req.session.user;
+    // return res.redirect("/") // si encuentra el usuario, que lo redirija a home
   } else {
     return next();
   }
-
 }
 );
+
 
 app.use(function (req, res, next) {
 
   if (req.cookies.userId != undefined && req.session.user == undefined) {
-    let userId = req.cookies.userId; // 
+    let userId = req.cookies.userId;
 
-    db.User.findByPk(userId)
+    /* buscar el id en la db */
+    db.Usuario.findByPk(userId)
       .then((result) => {
         req.session.user = result;
         res.locals.user = result;
@@ -59,16 +59,13 @@ app.use(function (req, res, next) {
       }).catch((err) => {
         return console.log(err);
       });
-    /* buscar el id en la db */
   } else {
     return next();
   }
+});
 
-  // .catch después del .then? o solo el next()?
-})
 
-////////////
-
+// RUTAS
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
