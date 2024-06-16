@@ -48,7 +48,26 @@ let usersController = {
         return res.render("register");
     },
     profile: function (req, res) {
-        return res.render("profile",);
+        db.Usuario.findByPk(req.params.id)
+            .then((usuario) => {
+                db.Producto.findAll({
+                    where: { id_usuario: req.params.id },
+                    include: [{
+                        model: db.Comentario,
+                        as: "comentarios"
+                    }]
+                })
+                    .then((productos) => {
+                        return res.render("profile", { usuario: usuario, productos: productos });
+                    }
+                    ).catch((err) => {
+                        console.log(err);
+                    });
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     },
     profileEdit: function (req, res) {
         return res.render("profile-edit");

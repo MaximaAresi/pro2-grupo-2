@@ -37,10 +37,8 @@ app.use(session({
 app.use(function (req, res, next) {
   if (req.session.user != undefined) {
     res.locals.user = req.session.user;
-    // return res.redirect("/") // si encuentra el usuario, que lo redirija a home
-  } else {
-    return next();
   }
+  return next();
 }
 );
 

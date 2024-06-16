@@ -42,7 +42,7 @@ ol {
 
 a {
   display: inline-block;
-  text-decoration: underline;
+  text-decoration: solid;
   color: inherit;
 }
 
