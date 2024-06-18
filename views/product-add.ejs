@@ -20,21 +20,29 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-
+						<% errores.forEach (errores => {%>
+							<p><% errores.msg %></p>
+						<%})%>
 						<form class="formModificado" method="POST" action='/products/add'>
 
-							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" name="" type="text"
-									required /></label>
-							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" name="" type="text"
-									required /></label>
-							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" name="" type="file"
-									required /></label>
-							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" name="" type="number"
-									required /></label>
+							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" name="Nombre_Producto" type="text"
+									 /></label>
+							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" name="Descripcion" type="text"
+									 /></label>
+							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" name="Foto_Producto" type="file"
+									 /></label>
+							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" name="Precio_Producto" type="number"
+									 /></label>
 							<input type="submit" value="Submit" />
 
 						</form>
-
+						<% if (locals && locals.mensajesDeError){%>
+							<% for (let error in mensajesDeError) {%>
+								<p>
+									<%= mensajesDeError[error].msg %>
+								</p>
+							<%}%>
+						<%}%>
 					</h2>
 
 

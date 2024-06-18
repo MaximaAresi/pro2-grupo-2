@@ -1,5 +1,6 @@
 const db = require('../database/models') /*../db/info */
 const op = db.Sequelize.Op;
+const {validationResult} = require('express-validator');
 
 
 let productsController = {
@@ -46,10 +47,30 @@ let productsController = {
 
     },
     guardarProducto: function (req, res) {
+        let errores = validationResult(req);
+        //res.send(errores)
+        if (errores.isEmpty()) {
+            let producto = req.body;
+            productId = ProductoModel.create(producto);
+            res.redirect('/product-add' + productId); //chequear este redirect
+        //return res.render('product-add', {mensajeDeError: errores.mapped()})
+        }else{
+            res.render('product-add', {errores: errores.array()});
+        }
         return res.render("product", { db })
     }
-}
+        
+    }
 
+//cargarProducto: function (req, res) {
+        
+//let filtro = {
+//    where:[{mail: req.body.email}]
+//};
+
+//db.Usuario.findOne(filtro)
+   
+//////////////////////////////////
 // const indexController = {
 
 //     detalle: function (req, res) {

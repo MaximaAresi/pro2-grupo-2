@@ -1,10 +1,19 @@
 var express = require('express');
 var router = express.Router();
+const { body } = require("express-validator");
+const db = require('../database/models')
 
 /* REQUIERO EL CONTROLLER DE PRODUCTOS */
 var productsController = require('../controllers/productsController');
 var indexController = require('../controllers/indexController');
 
+//Validaciones
+let productValidation = [
+    body ('Nombre_Producto').notEmpty().withMessage("Por favor, introduzca el nombre del producto").bail(),
+    body ('Descripcion').notEmpty().withMessage("Por favor, introduzca una descripcion para el producto"),
+    body ('Foto_Producto').notEmpty().withMessage("Por favor, introduzca una imagen del producto"),
+    body ('Precio_Producto').notEmpty().withMessage("Por favor, introduzca el precio del producto"),
+];
 
 // RUTA: /products/
 router.get('/', indexController.main); /* todos los productos */
@@ -24,6 +33,6 @@ router.get('/add', productsController.productAdd)
 // -- Método POST --
 
 // RUTA: /products/add
-router.post('/add', productsController.guardarProducto);
+router.post('/add', productValidation, productsController.guardarProducto);
 
 module.exports = router; 

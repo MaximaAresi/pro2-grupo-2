@@ -23,10 +23,10 @@ let indexController = {
       }
     })
       .then(function (productos) {
-        if (searchResults = undefined) {
+        if (searchResults != undefined) {
           res.render("search-results", { productos: productos })
         } else {
-          return res.send("No hay resultados para su criterio de búsqueda");
+          return res.send("No hay resultados para su criterio de búsqueda"); //chequear que no funciona
         }
       })
   }
