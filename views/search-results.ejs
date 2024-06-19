@@ -12,43 +12,46 @@
 						<% } %>
 
 							<!-- /Header -->
-
-							<!-- Novedades -->
-							<div class="container products-wrapper">
-								<div class="row">
-									<div class="col-12">
-										<h2 class="products-title">Resultados de búsqueda</h2>
-									</div>
-									<!-- Show the "ultimos" products -->
-
-
-									<% for (let i=0; i < listadoProducto.length; i++ ) { %>
-										<div class="col-12 col-sm-6 col-lg-3">
-											<section class="product-box">
-												<a href="/products/detalle/<%= listadoProducto[i].id %>">
-													<figure class="product-box_image">
-														<img class="imgalt"
-															src="/images/<%= listadoProducto[i].fotoProducto %>"
-															alt="<%= listadoProducto[i].nombreProducto %>">
-													</figure>
-													<article class="product-box_data">
-														<h2>
-															<%= listadoProducto[i].nombreProducto%>
-														</h2>
-														<p>
-															<%= listadoProducto[i].descripcionProducto%>
-														</p>
-
-													</article>
-												</a>
-											</section>
+							<% if (resultadosBusqueda.length==0) { %>
+								<div class="container products-wrapper">
+									<div class="row">
+										<div class="col-12">
+											<h2 class="products-title">No se encontraron resultados de búsqueda</h2>
 										</div>
-										<% } %>
+										<% } else { %>
+											<div class="container products-wrapper">
+												<div class="row">
+													<div class="col-12">
+														<h2 class="products-title">Resultados de búsqueda</h2>
+													</div>
+											<% for (let i=0; i < listadoProducto.length; i++ ) { %>
+												<div class="col-12 col-sm-6 col-lg-3">
+													<section class="product-box">
+														<a href="/products/detalle/<%= listadoProducto[i].id %>">
+															<figure class="product-box_image">
+																<img class="imgalt"
+																	src="/images/<%= listadoProducto[i].fotoProducto %>"
+																	alt="<%= listadoProducto[i].nombreProducto %>">
+															</figure>
+															<article class="product-box_data">
+																<h2>
+																	<%= listadoProducto[i].nombreProducto%>
+																</h2>
+																<p>
+																	<%= listadoProducto[i].descripcionProducto%>
+																</p>
+
+															</article>
+														</a>
+													</section>
+												</div>
+												<% } %>
+													<% } %>
 
 
-											<!-- footer -->
-											<%- include('./partials/footer.ejs') %>
-												<!-- /footer -->
+														<!-- footer -->
+														<%- include('./partials/footer.ejs') %>
+															<!-- /footer -->
 	</body>
 
 </html>

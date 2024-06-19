@@ -1,6 +1,6 @@
 const db = require('../database/models') /*../db/info */
 const op = db.Sequelize.Op;
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 
 let productsController = {
@@ -32,7 +32,7 @@ let productsController = {
     },
     search: function (req, res) {
         let search = req.query.search;
-        console.log(req.query.search)
+
         db.Producto.findAll({
             where: {
                 [op.or]: [
@@ -42,7 +42,8 @@ let productsController = {
             }
         })
             .then((productos) => {
-                return res.render("search-results", { listadoProducto: productos })
+                let resultadosBusqueda = productos;
+                return res.render("search-results", { listadoProducto: productos, resultadosBusqueda: resultadosBusqueda })
             })
 
     },
@@ -53,23 +54,23 @@ let productsController = {
             let producto = req.body;
             productId = ProductoModel.create(producto);
             res.redirect('/product-add' + productId); //chequear este redirect
-        //return res.render('product-add', {mensajeDeError: errores.mapped()})
-        }else{
-            res.render('product-add', {errores: errores.array()});
+            //return res.render('product-add', {mensajeDeError: errores.mapped()})
+        } else {
+            res.render('product-add', { errores: errores.array() });
         }
         return res.render("product", { db })
     }
-        
-    }
+
+}
 
 //cargarProducto: function (req, res) {
-        
+
 //let filtro = {
 //    where:[{mail: req.body.email}]
 //};
 
 //db.Usuario.findOne(filtro)
-   
+
 //////////////////////////////////
 // const indexController = {
 
