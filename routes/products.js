@@ -15,6 +15,12 @@ let productValidation = [
     body ('Precio_Producto').notEmpty().withMessage("Por favor, introduzca el precio del producto"),
 ];
 
+let commentValidation = [
+    body ('Comentario')
+    .notEmpty().withMessage("Por favor, escriba su comentario")
+    .isLength({min:3}).withMessage("El comentario debe tener minimo tres caracteres"),
+];
+
 // RUTA: /products/
 router.get('/', indexController.main); /* todos los productos */
 

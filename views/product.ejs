@@ -55,12 +55,18 @@
 													<hr>
 													</hr>
 													<% } %>
+												
 														<form class="form" action="/products/detalle/id" method="GET">
-															<input class="form-input" type="text" name="" value=""
+															<input class="form-input" type="text" name="Comentario" value=""
 																placeholder="Agregar comentario">
 															<button type="submit" class="buy-now-button">AGREGAR
 																COMENTARIO</button>
 														</form>
+														<%if (req.session.user == undefined) { %>
+															<%	return res.redirect('/')%> <!--mostrar en pantalla mensaje de que debes estar logueado para poder comentar-->
+														<% }else{%>
+															<% res.redirect('/products/detalle/id') %> 
+																<% } %>
 											</section>
 										</div>
 
