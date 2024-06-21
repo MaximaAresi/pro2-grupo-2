@@ -52,6 +52,7 @@ let usersController = {
             .then((usuario) => {
                 db.Producto.findAll({
                     where: { id_usuario: req.params.id },
+                    order: [["createdAt", "DESC"]],
                     include: [{
                         model: db.Comentario,
                         as: "comentarios"
