@@ -3,7 +3,21 @@ var router = express.Router();
 var usersController = require('../controllers/usersController');
 const { body } = require("express-validator");
 const db = require('../database/models')
+const bcrypt = require('bcryptjs'); 
 
+let registerValidation = [
+    body("email")
+        .notEmpty().withMessage("El campo no puede estar vacío. Por favor introduzca un e-mail").bail()
+        .isEmail().withMessage("El e-mail ingresado no es válido. Por favor introduzca un e-mail")
+        ,
+    body("usuario")
+        .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese un nombre de usuario").bail()
+        ,  
+    body("contraseña")
+        .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese una contreseña").bail()
+        .isLength( { min:4, max: 250 } ).withMessage("La contraseña debe tener más de 4 caracteres y menos de 250")
+        
+]
 
 let loginValidation = [
     body("email")
@@ -52,6 +66,7 @@ router.get('/:id/edit', usersController.profileEdit);
 
 
 // Método: POST
+router.post('/profile/id', registerValidation, usersController.store);
 router.post('/login', loginValidation, usersController.login);
 
 module.exports = router;

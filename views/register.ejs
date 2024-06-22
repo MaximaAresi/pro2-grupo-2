@@ -26,9 +26,21 @@
 						<form class="formModificado" method="GET" action='/users/profile/id'>
 
 							<label for="usuario">Usuario: <input id="usuario" name="usuario" type="text" required/></label>
+							<% if (locals.errors && errors.usuario) { %>
+								<p class="feedback"><% errors.usuario.msg %></p>
+							<% } %>
+
 							<label for="contraseña">Contraseña: <input id="contraseña" name="contraseña" type="password" required /></label>
-							<label for="email">E-mail: <input id="email" name="email" type="email" required /></label>
-							<label for="dni">DNI: <input id="dni" name="sni" type="text" required /></label>
+							<% if (locals.errors && errors.contraseña) { %>
+								<p class="feedback"><% errors.contraseña.msg %></p>
+							<% } %>
+
+							<label for="email">E-mail: <input id="email" name="email" type="email" value=" <%= old != undefined && old.email : old.email %>" required/></label>
+							<% if (locals.errors && errors.email) { %>
+								<p class="feedback"><% errors.email.msg %></p>
+							<% } %>
+
+							<label for="dni">DNI: <input id="dni" name="dni" type="text" required /></label>
 							<label for="fdn">Fecha de Nacimiento: <input id="fdn" name="fdn" type="date" required /></label>
 							<label for="fdp">Foto de Perfil: <input id="fdp" name="fdp" type="file" /></label>
 							<input type="submit" value="Submit" />

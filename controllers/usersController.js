@@ -45,7 +45,28 @@ let usersController = {
             })
     },
     register: function (req, res) {
-        return res.render("register");
+            return res.render("register");
+    },
+    store: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            let form = req.body;
+            let usuario = {
+                usuario: form.usuario,
+                email: form.email, 
+                contraseña: bcrypt.hashSync(form.contraseña, 10)
+            }
+
+            db.Usuario.create(usuario)
+            .then((result) => {
+                return res.redirect("/login");
+            }).catch((err) => {
+                return console.log(err); 
+            });
+        } else {
+            res.render('register', { errors: errors.mapped(), old: req.body});
+        }
+
     },
     profile: function (req, res) {
         db.Usuario.findByPk(req.params.id)
