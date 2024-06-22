@@ -4,9 +4,18 @@ const { validationResult } = require("express-validator");
 
 let usersController = {
     showLogin: function (req, res) {
-        return res.render("login");
+
+        let errors = validationResult(req);
+
+        if (req.session.user != undefined) {
+            return res.redirect("/");
+        } else {
+            return res.render("login", { errors: errors.array(), old: req.body });
+        }
+
     },
     login: function (req, res) {
+        let errors = validationResult(req);
 
         let filtro = {
             where: [{ mail: req.body.email }]
@@ -14,16 +23,11 @@ let usersController = {
 
         db.Usuario.findOne(filtro)
             .then((result) => {
-                console.log("Llegaron datos de la DB: " + result);
 
                 if (result) {
-                    // let check = bcrypt.compareSync(req.body.contrasenia, result.contrasenia);
-
-                    if (req.body.contrasenia == result.contrasenia) { // hasta que hagamos el register
-                        console.log("CONTRASENIA OKAY");
+                    if (bcrypt.compareSync(req.body.contrasenia, result.contrasenia)) {
                         if (req.body.recordarme != undefined) {
-                            console.log("RECORDARME");
-                            // res.cookie("userId", result.id, { maxAge: 1000 * 60 * 5 });
+                            res.cookie("userId", result.id, { maxAge: 1000 * 60 * 5 });
                         }
 
                         req.session.user = result;
@@ -32,12 +36,10 @@ let usersController = {
                         return res.redirect("/users/profile/" + result.id);
 
                     } else {
-                        console.log("CONRASENIA INCRRECTA");
-                        return res.redirect("/users/login");
+                        return res.render("login", { errors: errors.array(), old: req.body });
                     }
                 } else {
-                    console.log("No hay datos");
-                    return res.redirect("/users/login");
+                    return res.render("login", { errors: errors.array(), old: req.body })
                 }
             })
             .catch((err) => {
@@ -45,26 +47,26 @@ let usersController = {
             })
     },
     register: function (req, res) {
-            return res.render("register");
+        return res.render("register");
     },
     store: function (req, res) {
         let errors = validationResult(req);
-        if (errors.isEmpty()){
+        if (errors.isEmpty()) {
             let form = req.body;
             let usuario = {
                 usuario: form.usuario,
-                email: form.email, 
+                email: form.email,
                 contraseña: bcrypt.hashSync(form.contraseña, 10)
             }
 
             db.Usuario.create(usuario)
-            .then((result) => {
-                return res.redirect("/login");
-            }).catch((err) => {
-                return console.log(err); 
-            });
+                .then((result) => {
+                    return res.redirect("/login");
+                }).catch((err) => {
+                    return console.log(err);
+                });
         } else {
-            res.render('register', { errors: errors.mapped(), old: req.body});
+            res.render('register', { errors: errors.mapped(), old: req.body });
         }
 
     },

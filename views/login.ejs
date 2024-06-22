@@ -24,19 +24,25 @@
 										<form class="formModificado" method="POST" action='/users/login'>
 
 											<label for="email">E-mail:</label>
-											<input type="text" id="email" name="email">
-											<!-- mensaje de error -->
+											<input type="text" id="email" name="email" required>
+
 
 											<label for="contrasenia">Contraseña:</label>
-											<input type="password" id="contrasenia" name="contrasenia">
+											<input type="password" id="contrasenia" name="contrasenia" required>
+
 											<!-- mensaje de error -->
+											<% for(let i=0; i<errors.length; i++) {%>
+												<p>
+													<%=errors[i].msg %>
+												</p>
+												<% } %>
 
-											<div>
-												<label for="recordarme">Recordarme </label>
-												<input type="checkbox" name="recordarme" value="recordarme">
-											</div>
+													<div>
+														<label for="recordarme">Recordarme </label>
+														<input type="checkbox" name="recordarme" value="recordarme">
+													</div>
 
-											<input type="submit" value="Log In">
+													<input type="submit" value="Log In">
 										</form>
 
 									</h2>
