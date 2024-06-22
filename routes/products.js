@@ -40,5 +40,6 @@ router.get('/add', productsController.productAdd)
 
 // RUTA: /products/add
 router.post('/add', productValidation, productsController.guardarProducto);
+router.post('/detalle/id', commentValidation, productsController.comentarProducto);
 
 module.exports = router; 

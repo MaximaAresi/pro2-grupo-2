@@ -59,6 +59,9 @@ let productsController = {
             res.render('product-add', { errores: errores.array() });
         }
         return res.render("product", { db })
+    }, 
+    comentarProducto: function (req, res) {
+        
     }
 
 }
