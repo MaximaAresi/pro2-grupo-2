@@ -52,12 +52,12 @@ let productsController = {
         //res.send(errores);
         if (errores.isEmpty()) {
             productId = db.Producto.create({
-                Nombre: req.body.nombreProducto,
-                Descripcion: req.body.descripcionProducto,
-                Foto: req.body.fotoProducto,
+                Nombre: req.body.Nombre_Producto,
+                Descripcion: req.body.Descripcion,
+                Foto: req.body.Foto_Producto,
                 Precio: req.body.Precio_Producto
             }).then(function (res) {
-                res.redirect('/'); // res.redirect('/'+ productId); //esto no funciona
+                res.redirect("/products/detalle/:" + productId); // res.redirect('/'+ productId); //esto no funciona
             }).catch(function (error) {
                 console.log(error);
             })
@@ -140,7 +140,7 @@ let productsController = {
     productEdit: function (req, res) {
         return res.render("product-edit", { db: db })
     },
-
+    
 
 };
 

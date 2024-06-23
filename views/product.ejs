@@ -18,7 +18,12 @@
 							<div class="container products-wrapper">
 								<div class="d-flex align-items-center">
 									<h2 class="products-title">
-										<%= producto.nombreProducto %>
+										<% if (producto && producto.nombreProducto){ %>
+											<p><%= locals.producto.nombreProducto %></p>
+										<% }else {%>
+											<p>Producto no disponible</p>
+											<%}	%>
+										
 									</h2>
 									<p class="product-detail-description">
 										<a href="/products/product-edit/:id">Editar producto</a> 
