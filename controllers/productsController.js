@@ -49,14 +49,23 @@ let productsController = {
     },
     guardarProducto: function (req, res) {
         let errores = validationResult(req);
-        //res.send(errores)
+        //res.send(errores);
         if (errores.isEmpty()) {
-            let producto = req.body;
-            productId = ProductoModel.create(producto);
-            res.redirect('/product-add' + productId); //chequear este redirect
-            //return res.render('product-add', {mensajeDeError: errores.mapped()})
-        } else {
-            res.render('product-add', { errores: errores.array() });
+            productId = db.Producto.create({
+                Nombre: req.body.Nombre_Producto,
+                Descripcion: req.body.Descripcion,
+                Foto: req.body.Foto_Producto, 
+                Precio: req.body.Precio_Producto
+        }).then(function(res) {
+            res.redirect('/') // res.redirect('/'+ productId); //esto no funciona
+        }).catch(function (error) {
+            console.log(error);
+        })
+        }else{
+            res.render("product-add", {
+                errores: errores.array(),
+                old:req.body
+            });
         }
         return res.render("product", { db })
     }, 

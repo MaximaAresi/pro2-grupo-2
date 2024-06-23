@@ -17,21 +17,23 @@
 				<div class="row">
 					<div class="col-12">
 						<h2 class="products-title">Agregar productos</h2>
+					<% if (locals.errores){
+						errores.forEach(errores => {%>
+						<p><%= errores.msg%></p>
+					<%})}%>
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<% errores.forEach (errores => {%>
-							<p><% errores.msg %></p>
-						<%})%>
+						
 						<form class="formModificado" method="POST" action='/products/add'>
 
-							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" name="Nombre_Producto" type="text"
+							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" name="Nombre_Producto" type="text" value="<%= locals.old && old.Nombre_Producto ? old.Nombre_Producto: ''%>"
 									 /></label>
-							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" name="Descripcion" type="text"
+							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" name="Descripcion" type="text" value="<%= locals.old && old.Descripcion ? old.Descripcion: ''%>"
 									 /></label>
-							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" name="Foto_Producto" type="file"
+							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" name="Foto_Producto" type="file" value="<%= locals.old && old.Foto_Producto ? old.Foto_Producto: ''%>"
 									 /></label>
-							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" name="Precio_Producto" type="number"
+							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" name="Precio_Producto" type="number" value="<%= locals.old && old.Precio_Producto ? old.Precio_Producto: ''%>"
 									 /></label>
 							<input type="submit" value="Submit" />
 
