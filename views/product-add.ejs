@@ -17,11 +17,6 @@
 								<div class="row">
 									<div class="col-12">
 										<h2 class="products-title">Agregar productos</h2>
-										<% if (locals.errores){ errores.forEach(errores=> {%>
-											<p>
-												<%= errores.msg%>
-											</p>
-											<%})}%>
 									</div>
 									<!-- Show the "ultimos" products -->
 									<h2 class="col-12">
@@ -40,7 +35,14 @@
 											<label for="Precio_Producto">Precio del Producto: <input
 													id="Precio_Producto" name="Precio_Producto" type="number"
 													value="<%= locals.old && old.Precio_Producto ? old.Precio_Producto: ''%>" /></label>
-											<input type="submit" value="Submit" />
+
+											<% if (locals.errores){ errores.forEach(errores=> {%>
+												<p>
+													<%= errores.msg%>
+												</p>
+												<%})}%>
+
+													<input type="submit" value="Submit" />
 
 										</form>
 

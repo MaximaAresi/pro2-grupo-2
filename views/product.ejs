@@ -19,16 +19,18 @@
 								<div class="d-flex align-items-center">
 									<h2 class="products-title">
 										<% if (producto && producto.nombreProducto){ %>
-											<p><%= locals.producto.nombreProducto %></p>
-										<% }else {%>
-											<p>Producto no disponible</p>
-											<%}	%>
-										
+											<p>
+												<%= locals.producto.nombreProducto %>
+											</p>
+											<% }else {%>
+												<p>Producto no disponible</p>
+												<%} %>
+
 									</h2>
 									<p class="product-detail-description">
-										<a href="/products/product-edit/:id">Editar producto</a> 
+										<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
 
-										<a href="/products/add">  Agregar nuevo producto</a> 
+										<a href="/products/add"> Agregar nuevo producto</a>
 										<!-- ACA CAMBIA RUTAA! -->
 									</p>
 								</div>
@@ -63,9 +65,10 @@
 													<hr>
 													</hr>
 													<% } %>
-												
+
 														<form class="form" action="/products/detalle/id" method="POST">
-															<input class="form-input" type="text" name="texto_comentario" value=""
+															<input class="form-input" type="text"
+																name="texto_comentario" value=""
 																placeholder="Agregar comentario">
 															<button type="submit" class="buy-now-button">AGREGAR
 																COMENTARIO</button>

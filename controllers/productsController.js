@@ -45,19 +45,18 @@ let productsController = {
                 let resultadosBusqueda = productos;
                 return res.render("search-results", { listadoProducto: productos, resultadosBusqueda: resultadosBusqueda })
             })
-
     },
     guardarProducto: function (req, res) {
         let errores = validationResult(req);
         //res.send(errores);
         if (errores.isEmpty()) {
             productId = db.Producto.create({
-                Nombre: req.body.Nombre_Producto,
-                Descripcion: req.body.Descripcion,
-                Foto: req.body.Foto_Producto,
-                Precio: req.body.Precio_Producto
-            }).then(function (res) {
-                res.redirect("/products/detalle/:" + productId); // res.redirect('/'+ productId); //esto no funciona
+                nombreProducto: req.body.Nombre_Producto,
+                descripcionProducto: req.body.Descripcion,
+                fotoProducto: req.body.Foto_Producto,
+                precioProducto: req.body.Precio_Producto
+            }).then(function (producto) {
+                return res.redirect("/products/detalle/" + producto.id);
             }).catch(function (error) {
                 console.log(error);
             })
@@ -67,7 +66,6 @@ let productsController = {
                 old: req.body
             });
         }
-        return res.render("product", { db })
     },
     comentarProducto: function (req, res) {
         let errores = validationResult(req);
@@ -94,53 +92,53 @@ let productsController = {
                             { association: "usuarios" }
                         ]
                     },
-                    {association: "usuarios"}
+                    { association: "usuarios" }
                 ]
             }
 
 
         }
-    }, 
+    },
     edit: function (req, res) {
 
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){ //Si no encuentra errores manda la informacion del form y te lleva/redirige al producto editado
+        if (errors.isEmpty()) { //Si no encuentra errores manda la informacion del form y te lleva/redirige al producto editado
             let form = req.body
 
-            let id_usuario = req.session.usuario.id; 
+            let id_usuario = req.session.usuario.id;
 
             let product = {
-                id_vendedor: id_usuario, 
+                id_vendedor: id_usuario,
                 foto_producto: form.Foto_Producto,// Viene de product-edit y product-add, es la clave. 
                 nombreProducto: form.Nombre_Producto,// Viene de product-edit y product-add, es la clave.
                 descripcionProducto: form.Descripcion// Viene de product-edit y product-add, es la clave.
             }
 
-            db.Producto.update( product, {where: [{id: form.id}]})
-                .then(function(result){
-                    return res.redirect("/products/detalle/:" + form.id) //ESTA PARTE REVISARLA, sobrtodo la ruta entre ""
+            db.Producto.update(product, { where: [{ id: form.id }] })
+                .then(function (result) {
+                    return res.redirect("/products/detalle/" + form.id) //ESTA PARTE REVISARLA, sobrtodo la ruta entre ""
                 })
-                .catch(function(error){
+                .catch(function (error) {
                     console.log(error);
                 })
         } else { //Si encuentra un error me lo va a motrar en la vista
 
-            let id= req.params.id
+            let id = req.params.id
 
-            db.Producto.findByPk(id, {include:[{association:"usuarios"}]})
-                .then(function(resultado) {
-                    return res.render("product-edit", {producto: resultado, errors: errors.mapped(), old: req.body})
+            db.Producto.findByPk(id, { include: [{ association: "usuarios" }] })
+                .then(function (resultado) {
+                    return res.render("product-edit", { producto: resultado, errors: errors.mapped(), old: req.body })
                 })
                 .catch((err) => {
                     console.log(err);
                 })
         }
-    }, 
+    },
     productEdit: function (req, res) {
         return res.render("product-edit", { db: db })
     },
-    
+
 
 };
 
