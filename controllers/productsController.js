@@ -15,7 +15,6 @@ let productsController = {
                     db.Comentario.findAll({ where: { producto_id: result.id }, include: [{ model: db.Usuario, as: "usuarios" }] })
                         .then((comentarios) => {
                             return res.render("product", { producto: result, comentarios });
-
                         })
                 } else {
                     // Caso donde el producto no existe
@@ -95,8 +94,6 @@ let productsController = {
                     { association: "usuarios" }
                 ]
             }
-
-
         }
     },
     edit: function (req, res) {

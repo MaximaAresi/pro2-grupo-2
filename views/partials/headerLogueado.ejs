@@ -27,6 +27,8 @@
 			<i class="fas fa-bars"></i>
 		</button>
 
+
+
 		<nav class="main-navbar">
 			<ul class="left-navbar">
 				<li><a href="/">Todos los productos</a></li>
@@ -34,8 +36,12 @@
 			</ul>
 
 			<ul class="right-navbar">
-				<li><a href="/users/profile/id">
-						<!-- <p>@<%= // db.usuario.usuario %> <i class="fas fa-user margin-bottom-20"></i> -->
+				<li>
+					<p> Hola, @<%= locals.user.usuario %>!
+					</p>
+				</li>
+				<li>
+					<a href="/users/profile/<%= locals.user.id %>">Mi perfil  <i class="far fa-address-card"></i>
 					</a>
 				</li>
 				<li>
@@ -45,14 +51,11 @@
 						</button>
 					</form>
 				</li>
-				<!-- Solo deslogueado <li>
-						<a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
-						</a>
-					</li>
-					<li>
-						<a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-					</li> -->
+
 			</ul>
+		</nav>
+
+
 		</nav>
 	</div>
 </header>

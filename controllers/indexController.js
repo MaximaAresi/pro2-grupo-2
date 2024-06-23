@@ -9,7 +9,7 @@ let indexController = {
       }]
     }) //poner filtrado dentro de los parentesis
       .then(function (response) {
-        return res.render("index", { listaProducto: response})
+            return res.render("index", { listaProducto: response})
       }).catch(function (err) {
         return console.log(err);
       })

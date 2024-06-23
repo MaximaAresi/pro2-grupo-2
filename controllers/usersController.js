@@ -52,7 +52,6 @@ let usersController = {
     store: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            console.log(req.body);
             let form = req.body;
             let usuario = {
                 usuario: form.usuario,
