@@ -54,27 +54,59 @@ let productsController = {
             productId = db.Producto.create({
                 Nombre: req.body.Nombre_Producto,
                 Descripcion: req.body.Descripcion,
-                Foto: req.body.Foto_Producto, 
+                Foto: req.body.Foto_Producto,
                 Precio: req.body.Precio_Producto
-        }).then(function(res) {
-            res.redirect('/') // res.redirect('/'+ productId); //esto no funciona
-        }).catch(function (error) {
-            console.log(error);
-        })
-        }else{
+            }).then(function (res) {
+                res.redirect('/'); // res.redirect('/'+ productId); //esto no funciona
+            }).catch(function (error) {
+                console.log(error);
+            })
+        } else {
             res.render("product-add", {
                 errores: errores.array(),
-                old:req.body
+                old: req.body
             });
         }
         return res.render("product", { db })
-    }, 
+    },
     comentarProducto: function (req, res) {
-        
+        let errores = validationResult(req);
+        let form = req.body;
+        if (errores.isEmpty()) {
+            let comentario = {
+                comentario: form.Comentario,
+                idUsuario: req.session.user.id,
+                idProducto: req.params.id
+            }
+            db.Comentario.create(comentario)
+                .then(function (result) {
+                    return res.redirect("/");
+                }).catch(function (err) {
+                    console.log(err);
+                })
+        } else {
+            let id = req.params.id
+            let filtro = {
+                include: [
+                    {
+                        association: "comentarios",
+                        include: [
+                            { association: "usuarios" }
+                        ]
+                    },
+                    {association: "usuarios"}
+                ]
+            }
+
+
+        }
     }
+};
 
-}
 
+//db.Comentario.findAll({ where: { producto_id: result.id }, order:["createdAt", "DESC"] })
+//                        .then((comentarios) => {
+//                            return res.render("product", { producto: result, comentarios })});
 //cargarProducto: function (req, res) {
 
 //let filtro = {
@@ -93,5 +125,12 @@ let productsController = {
 //     }
 // }
 
+//return res.send("Producto no encontrado"); // Terminar
+//db.Comentario.findAll({
+//    where: {
+//      searchResults: { [Op.like]: [{ texto_comentario:'%%' }] },
+//      order: ["createdAt", "DESC"]
+//    }})
+//return res.render('products/detalle')
 
 module.exports = productsController;

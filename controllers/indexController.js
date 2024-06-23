@@ -16,7 +16,7 @@ let indexController = {
 
   },
   descripcion: function (req, res) {
-    db.Productos.findAll({
+    db.Producto.findAll({
       where: {
         searchResults: { [Op.or]: [{ descripcionProducto: '%%' }, { nombreProducto: '%%' }] },
         order: ["createdAt", "DESC"]
