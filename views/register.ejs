@@ -5,66 +5,129 @@
 
 	<body>
 		<!-- Header -->
-		<%if (locals.user != undefined) { %>
+		<%if (locals.user !=undefined) { %>
 			<%- include ('./partials/headerLogueado') %>
-		 <% }else{%>
-		   <%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
-		 <% } %>
-		
+				<% }else{%>
+					<%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
+						<% } %>
 
-			<!-- /Header -->
 
-			<!-- Novedades -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Registrate</h2>
-					</div>
-					<!-- Show the "ultimos" products -->
-					<h2 class="col-12">
+							<!-- /Header -->
 
-						<form class="formModificado" method="POST" action='/users/profile/:id'> 
-							<!-- es/id o /:id  -->
+							<!-- Novedades -->
+							<div class="container products-wrapper">
+								<div class="row">
+									<div class="col-12">
+										<h2 class="products-title">Registrate</h2>
+									</div>
+									<!-- Show the "ultimos" products -->
+									<h2 class="col-12">
 
-							<label for="usuario">Usuario: </label>
-							<input id="usuario" name="usuario" type="text" required/>
-							
-							<!-- <%// if (locals.errors && errors.usuario) { %> -->
-								<!-- <p class="feedback"><%// errors.usuario.msg %></p> -->
-							<!-- <%// } %> -->
+										<form class="formModificado" method="POST" action='/users/profile/:id'>
+											<!-- es/id o /:id  -->
 
-							<label for="contraseña">Contraseña: </label>
-							<input id="contraseña" name="contraseña" type="password" required />
+											<label for="usuario">Usuario: </label>
+											<input id="usuario" name="usuario" type="text" required />
 
-							<!-- <%// if (locals.errors && errors.contraseña) { %>
+											<!-- <%// if (locals.errors && errors.usuario) { %> -->
+											<!-- <p class="feedback"><%// errors.usuario.msg %></p> -->
+											<!-- <%// } %> -->
+
+											<label for="contraseña">Contraseña: </label>
+											<input id="contraseña" name="contraseña" type="password" required />
+
+											<!-- <%// if (locals.errors && errors.contraseña) { %>
 								<p class="feedback"><%// errors.contraseña.msg %></p>
-							<%// } %> --> 
+							<%// } %> -->
 
-							<label for="email">E-mail:</label>
-							<input id="email" name="email" type="email" required/>
+											<label for="email">E-mail:</label>
+											<input id="email" name="email" type="email" required />
 
-							<!-- <%// if (locals.errors && errors.email) { %>
+											<!-- <%// if (locals.errors && errors.email) { %>
 								<p class="feedback"><% //errors.email.msg %></p>
 							<% //} %> -->
 
-							<label for="dni">DNI: <input id="dni" name="dni" type="text" required /></label>
-							<label for="fdn">Fecha de Nacimiento: <input id="fdn" name="fdn" type="date" required /></label>
-							<label for="fdp">Foto de Perfil: <input id="fdp" name="fdp" type="file" /></label>
-							
-							<!-- Mensaje de error  -->
+											<label for="dni">DNI: <input id="dni" name="dni" type="text"
+													required /></label>
+											<label for="fdn">Fecha de Nacimiento: <input id="fdn" name="fdn" type="date"
+													required /></label>
+											<label for="fdp">Foto de Perfil: <input id="fdp" name="fdp"
+													type="file" /></label>
+
+											<!-- Mensaje de error  -->
 
 
 
-							<input type="submit" value="Submit" />
+											<input type="submit" value="Submit" />
 
-						</form>
+										</form>
 
-					</h2>
+									</h2>
 
 
-					<!-- footer -->
-					<%- include('./partials/footer.ejs') %>
-						<!-- /footer -->
+									<!-- /Header -->
+
+									<!-- Novedades -->
+									<div class="container products-wrapper">
+										<div class="row">
+											<div class="col-12">
+												<h2 class="products-title">Registrate</h2>
+											</div>
+											<!-- Show the "ultimos" products -->
+											<h2 class="col-12">
+
+												<form class="formModificado" method="POST" action='/users/register'>
+
+													<label for="usuario">Usuario: <input id="usuario" name="usuario"
+															type="text" required /></label>
+													<% if (locals.errors && errors.usuario) { %>
+														<p class="feedback">
+															<% errors.usuario.msg %>
+														</p>
+														<% } %>
+
+															<label for="contraseña">Contraseña: <input id="contraseña"
+																	name="contraseña" type="password"
+																	required /></label>
+															<% if (locals.errors && errors.contraseña) { %>
+																<p class="feedback">
+																	<% errors.contraseña.msg %>
+																</p>
+																<% } %>
+
+																	<label for="email">E-mail: <input id="email"
+																			name="email" type="email"
+																			value=" <%= old != null ? old.email : "" %>"
+																			required /></label>
+																	<% if (locals.errors && errors.email) { %>
+																		<p class="feedback">
+																			<% errors.email.msg %>
+																		</p>
+																		<% } %>
+
+																			<label for="dni">DNI: <input id="dni"
+																					name="dni" type="text" maxlength="9"
+																					required /></label>
+																			<label for="fdn">Fecha de Nacimiento: <input
+																					id="fdn" name="fdn" type="date"
+																					max="2024-06-01" required /></label>
+																			<label for="fdp">Foto de Perfil: <input
+																					id="fdp" name="fdp"
+																					type="file" /></label>
+																			<input type="submit" value="Submit" />
+
+
+												</form>
+
+											</h2>
+
+
+											<!-- footer -->
+											<%- include('./partials/footer.ejs') %>
+												<!-- /footer -->
+										</div>
+									</div>
+
 	</body>
 
 </html>

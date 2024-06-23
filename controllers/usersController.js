@@ -47,21 +47,30 @@ let usersController = {
             })
     },
     register: function (req, res) {
-        return res.render("register");
+        return res.render("register", { old: null });
     },
     store: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
+            console.log(req.body);
             let form = req.body;
             let usuario = {
                 usuario: form.usuario,
-                email: form.email,
-                contraseña: bcrypt.hashSync(form.contraseña, 10)
+                mail: form.email,
+                contrasenia: bcrypt.hashSync(form.contraseña, 10),
+                fecha: form.fdn,
+                DNI: form.dni,
+                fotoPerfil: form.fdp
             }
 
             db.Usuario.create(usuario)
                 .then((result) => {
-                    return res.redirect("/login");
+                    if (result) {
+                        req.session.user = result;
+                        req.session.save();
+                        return res.redirect("/users/profile/" + result.id);
+                    }
+
                 }).catch((err) => {
                     return console.log(err);
                 });

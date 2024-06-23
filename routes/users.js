@@ -66,7 +66,7 @@ router.get('/:id/edit', usersController.profileEdit);
 
 
 // Método: POST
-router.post('/profile/id', registerValidation, usersController.store);
+router.post('/register', registerValidation, usersController.store);
 router.post('/login', loginValidation, usersController.login);
 router.post('/logout', usersController.logout);
 
