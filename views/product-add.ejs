@@ -5,54 +5,59 @@
 
 	<body>
 		<!-- Header -->
-		<%if (locals.user != undefined) { %>
+		<%if (locals.user !=undefined) { %>
 			<%- include ('./partials/headerLogueado') %>
-		 <% }else{%>
-		   <%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
-		 <% } %>
-			<!-- /Header -->
+				<% }else{%>
+					<%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
+						<% } %>
+							<!-- /Header -->
 
-			<!-- Novedades -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Agregar productos</h2>
-					<% if (locals.errores){
-						errores.forEach(errores => {%>
-						<p><%= errores.msg%></p>
-					<%})}%>
-					</div>
-					<!-- Show the "ultimos" products -->
-					<h2 class="col-12">
-						
-						<form class="formModificado" method="POST" action='/products/add'>
+							<!-- Novedades -->
+							<div class="container products-wrapper">
+								<div class="row">
+									<div class="col-12">
+										<h2 class="products-title">Agregar productos</h2>
+										<% if (locals.errores){ errores.forEach(errores=> {%>
+											<p>
+												<%= errores.msg%>
+											</p>
+											<%})}%>
+									</div>
+									<!-- Show the "ultimos" products -->
+									<h2 class="col-12">
 
-							<label for="Nombre_Producto">Nombre del Producto: <input id="Nombre_Producto" name="Nombre_Producto" type="text" value="<%= locals.old && old.Nombre_Producto ? old.Nombre_Producto: ''%>"
-									 /></label>
-							<label for="Descripcion">Descripcion del Producto: <input id="Descripcion" name="Descripcion" type="text" value="<%= locals.old && old.Descripcion ? old.Descripcion: ''%>"
-									 /></label>
-							<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto" name="Foto_Producto" type="file" value="<%= locals.old && old.Foto_Producto ? old.Foto_Producto: ''%>"
-									 /></label>
-							<label for="Precio_Producto">Precio del Producto: <input id="Precio_Producto" name="Precio_Producto" type="number" value="<%= locals.old && old.Precio_Producto ? old.Precio_Producto: ''%>"
-									 /></label>
-							<input type="submit" value="Submit" />
+										<form class="formModificado" method="POST" action='/products/add'>
 
-						</form>
-						
+											<label for="Nombre_Producto">Nombre del Producto: <input
+													id="Nombre_Producto" name="Nombre_Producto" type="text"
+													value="<%= locals.old && old.Nombre_Producto ? old.Nombre_Producto: ''%>" /></label>
+											<label for="Descripcion">Descripcion del Producto: <input id="Descripcion"
+													name="Descripcion" type="text"
+													value="<%= locals.old && old.Descripcion ? old.Descripcion: ''%>" /></label>
+											<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto"
+													name="Foto_Producto" type="file"
+													value="<%= locals.old && old.Foto_Producto ? old.Foto_Producto: ''%>" /></label>
+											<label for="Precio_Producto">Precio del Producto: <input
+													id="Precio_Producto" name="Precio_Producto" type="number"
+													value="<%= locals.old && old.Precio_Producto ? old.Precio_Producto: ''%>" /></label>
+											<input type="submit" value="Submit" />
 
-						<% if (locals && locals.mensajesDeError){%>
-							<% for (let error in mensajesDeError) {%>
-								<p>
-									<%= mensajesDeError[error].msg %>
-								</p>
-							<%}%>
-						<%}%>
-					</h2>
+										</form>
 
 
-					<!-- footer -->
-					<%- include('./partials/footer.ejs') %>
-						<!-- /footer -->
+										<% if (locals && locals.mensajesDeError){%>
+											<% for (let error in mensajesDeError) {%>
+												<p>
+													<%= mensajesDeError[error].msg %>
+												</p>
+												<%}%>
+													<%}%>
+									</h2>
+
+
+									<!-- footer -->
+									<%- include('./partials/footer.ejs') %>
+										<!-- /footer -->
 	</body>
 
 </html>
