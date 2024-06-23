@@ -25,22 +25,22 @@
                         <!-- //capaz va solo /edit o /product-edit ? -->
                          
                          <label for="Nombre_Producto">Nombre del Producto: 
-                            <input id="Nombre_Producto" name="Nombre_Producto" type="text" value="<%= producto.Nombre_Producto %>"/></label>
+                            <input id="Nombre_Producto" name="nombreProducto" type="text" value="<%= producto.nombreProducto %>"/></label>
                            
-                            <% if (locals.errors && errors.Nombre_Producto){ %>
-                                <p> <%= errors.Nombre_Producto.msg %> </p>
+                            <% if (locals.errors && errors.nombreProducto){ %>
+                                <p> <%= errors.nombreProducto.msg %> </p>
                             <% } %>
                   
                          <label for="Descripcion">Descripcion del Producto: 
-                            <input id="Descripcion" name="Descripcion" type="text"  value="<%= producto.Descripcion %>"/></label>
-                            <% if (locals.errors && errors.Descripcion){ %>
-                                <p> <%= errors.Descripcion.msg %> </p>
+                            <input id="Descripcion" name="descripcionProducto" type="text"  value="<%= producto.descripcionProducto %>"/></label>
+                            <% if (locals.errors && errors.descripcionProducto){ %>
+                                <p> <%= errors.descripcionProducto.msg %> </p>
                             <% } %>
 
                          <label for="Foto_Producto">Foto del Producto: 
-                            <input id="Foto_Producto" name="Foto_Producto" type="file" value="<%=producto.Foto_Producto %>"/></label>
-                            <% if (locals.errors && errors.Foto_Producto){ %>
-                                <p> <%= errors.Foto_Producto.msg %> </p>
+                            <input id="Foto_Producto" name="fotoProducto" type="file" value="<%=producto.fotoProducto %>"/></label>
+                            <% if (locals.errors && errors.fotoProducto){ %>
+                                <p> <%= errors.fotoProducto.msg %> </p>
                             <% } %>
 
                          <label for="Precio_Producto">Precio del Producto: 

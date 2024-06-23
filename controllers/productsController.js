@@ -52,9 +52,9 @@ let productsController = {
         //res.send(errores);
         if (errores.isEmpty()) {
             productId = db.Producto.create({
-                Nombre: req.body.Nombre_Producto,
-                Descripcion: req.body.Descripcion,
-                Foto: req.body.Foto_Producto,
+                Nombre: req.body.nombreProducto,
+                Descripcion: req.body.descripcionProducto,
+                Foto: req.body.fotoProducto,
                 Precio: req.body.Precio_Producto
             }).then(function (res) {
                 res.redirect('/'); // res.redirect('/'+ productId); //esto no funciona
@@ -74,7 +74,7 @@ let productsController = {
         let form = req.body;
         if (errores.isEmpty()) {
             let comentario = {
-                comentario: form.Comentario,
+                comentario: form.texto_comentario,
                 idUsuario: req.session.user.id,
                 idProducto: req.params.id
             }
