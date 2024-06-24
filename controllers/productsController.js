@@ -104,7 +104,25 @@ let productsController = {
                     },
                     { association: "usuarios" }
                 ]
-            }
+            };
+            db.Producto.findByPk(id, filtro)
+            .then(function (data) {
+                return db.Comentario.findAll({
+                    where:{idProducto:id},
+                    order:[["createdAt", "DESC"]],
+                    include:[{association:"usuarios"}]
+                }).then(function (comentarios) {
+                    return res.render("product", {
+                        comentario: comentarios,
+                        data:data,
+                        errores:errores.mapped(),
+                        old:req.body
+                    });
+                });
+            })
+            .catch(function (error) {
+                return console.log(error);
+            })
         }
     },
     edit: function (req, res) {
