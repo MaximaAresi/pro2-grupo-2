@@ -26,104 +26,50 @@
 										<form class="formModificado" method="POST" action='/users/register'>
 
 											<label for="usuario">Usuario: <input id="usuario" name="usuario" type="text"
-													required /></label>
+													 value="<%= locals.old !== undefined && old.usuario ? old.usuario : "" %>"/>
+											</label>
 											<% if (locals.errors && errors.usuario) { %>
 												<p class="feedback">
 													<% errors.usuario.msg %>
 												</p>
 												<% } %>
 
-													<label for="contraseña">Contraseña: <input id="contraseña"
-															name="contraseña" type="password" required /></label>
-													<% if (locals.errors && errors.contraseña) { %>
-														<p class="feedback">
-															<% errors.contraseña.msg %>
-														</p>
-														<% } %>
+											<label for="contrasenia">Contraseña: <input id="contrasenia"
+														name="contrasenia" type="password"  value="" />
+											</label>
+											<% if (locals.errors && errors.contrasenia) { %>
+													<p class="feedback">
+														<% errors.contrasenia.msg %>
+													</p>
+												<% } %>
 
-															<label for="email">E-mail: <input id="email" name="email"
-																	type="email"
-																	value=" <%= old != null ? old.email : "" %>"
-																	required /></label>
-															<% if (locals.errors && errors.email) { %>
-																<p class="feedback">
-																	<% errors.email.msg %>
-																</p>
-																<% } %>
+											<label for="mail">E-mail: <input id="mail" name="mail" type="email"
+																	value= "<%= locals.old !== undefined && old.mail ? old.mail : "" %>" />
+											</label>
+											<% if (locals.errors && errors.mail) { %>
+													<p class="feedback">
+															<% errors.mail.msg %>
+													</p>
+												<% } %>
 
-																	<label for="dni">DNI: <input id="dni" name="dni"
-																			type="text" maxlength="9"
-																			required /></label>
-																	<label for="fdn">Fecha de Nacimiento: <input
-																			id="fdn" name="fdn" type="date"
-																			max="2024-06-01" required /></label>
-																	<label for="fdp">Foto de Perfil: <input id="fdp"
-																			name="fdp" type="file" /></label>
-																	<input type="submit" value="Submit" />
+											<label for="dni">DNI: <input id="dni" name="dni" type="text" maxlength="9"
+																value="<%= locals.old !== undefined && old.dni ? old.dni : "" %>"/>
+											</label>
+											
+											<label for="fdn">Fecha de Nacimiento: <input id="fecha" name="fecha" type="date" max="2024-06-01"  
+																			value="<%= locals.old !== undefined && old.fecha ? old.fecha : "" %>"/>
+											</label>
+
+											<label for="fdp">Foto de Perfil: <input id="fotoPerfil" name="fotoPerfil" type="file"
+															value="<%= locals.old !== undefined && old.fotoPerfil ? old.fotoPerfil : "" %>" />
+											</label>
+											
+											<input type="submit" value="Submit" />
 
 
 										</form>
 
 									</h2>
-
-
-									<!-- /Header -->
-
-									<!-- Novedades -->
-									<div class="container products-wrapper">
-										<div class="row">
-											<div class="col-12">
-												<h2 class="products-title">Registrate</h2>
-											</div>
-											<!-- Show the "ultimos" products -->
-											<h2 class="col-12">
-
-												<form class="formModificado" method="POST" action='/users/register'>
-
-													<label for="usuario">Usuario: <input id="usuario" name="usuario"
-															type="text" required /></label>
-													<% if (locals.errors && errors.usuario) { %>
-														<p class="feedback">
-															<% errors.usuario.msg %>
-														</p>
-														<% } %>
-
-															<label for="contraseña">Contraseña: <input id="contraseña"
-																	name="contraseña" type="password"
-																	required /></label>
-															<% if (locals.errors && errors.contraseña) { %>
-																<p class="feedback">
-																	<% errors.contraseña.msg %>
-																</p>
-																<% } %>
-
-																	<label for="email">E-mail: <input id="email"
-																			name="email" type="email"
-																			value=" <%= old != null ? old.email : "" %>"
-																			required /></label>
-																	<% if (locals.errors && errors.email) { %>
-																		<p class="feedback">
-																			<% errors.email.msg %>
-																		</p>
-																		<% } %>
-
-																			<label for="dni">DNI: <input id="dni"
-																					name="dni" type="text" maxlength="9"
-																					required /></label>
-																			<label for="fdn">Fecha de Nacimiento: <input
-																					id="fdn" name="fdn" type="date"
-																					max="2024-06-01" required /></label>
-																			<label for="fdp">Foto de Perfil: <input
-																					id="fdp" name="fdp"
-																					type="file" /></label>
-																			<input type="submit" value="Submit" />
-
-
-												</form>
-
-											</h2>
-
-
 											<!-- footer -->
 											<%- include('./partials/footer.ejs') %>
 												<!-- /footer -->

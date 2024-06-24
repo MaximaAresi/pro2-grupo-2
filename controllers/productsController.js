@@ -9,7 +9,23 @@ let productsController = {
         // Recupero el id de mi ruta
         let idProducto = req.params.id
 
-        db.Producto.findByPk(idProducto)
+        db.Producto.findByPk(idProducto, {
+            include: [{
+                association: "comentarios",
+                separate: true,
+                order: [["createdAt", "DESC"]]
+            },{
+                association: "usuarios" }]
+        })
+        // .then((producto)=>{
+        //     return db.Usuario.findAll()
+        //         .then((usuario)=>{
+        //             return res.render("product", {producto: producto, usuario: usuario})
+        //         })
+            
+        // })
+
+        
             .then((result) => {
                 if (result) {
                     db.Comentario.findAll({
@@ -23,8 +39,9 @@ let productsController = {
                         .then((comentarios) => {
                             db.Usuario.findByPk(result.id_usuario)
                             .then((usuario) => {
+                               //return res.send(req.session)
                                 console.log(result);
-                                return res.render("product", { producto: result, comentarios, usuario: usuario });
+                                return res.render("product", { producto: result, comentarios: comentarios, usuario: usuario });
                             })
                         })
                 } else {

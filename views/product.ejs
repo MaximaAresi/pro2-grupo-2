@@ -20,18 +20,23 @@
 									<h2 class="products-title">
 										<% if (producto && producto.nombreProducto){ %>
 											<p>
-												<a href="/users/profile/<%= usuario.id %>">@<%= usuario.usuario %></a> ha publicado: <strong><%=locals.producto.nombreProducto %></strong>
+												<a href="/users/profile/<%= producto.id_usuario %>">@<%= producto.usuarios.usuario.usuario %></a> ha publicado: <strong><%=locals.producto.nombreProducto %></strong>
+												<!-- No aparece el nombre del usuario -->
 											</p>
 											<% }else {%>
 												<p>Producto no disponible</p>
-												<%} %>
+												<% } %>
 									</h2>
-									<p class="product-detail-description">
-										<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
+									<!-- //if (locals.user !=undefined) {  -->
+										<!-- <% //if(locals.user.id == producto.id_usuario){ %> -->
+											<p class="product-detail-description">
+											<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
+											</p>
+										<!-- <% //}else{%>
+											<p class="product-detail-description"></p>
 
-										<a href="/products/add"> Agregar nuevo producto</a>
-										<!-- ACA CAMBIA RUTAA! -->
-									</p>
+										<% //} %> -->
+									
 								</div>
 
 								<div class="product-detail">

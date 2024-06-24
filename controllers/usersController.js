@@ -24,6 +24,7 @@ let usersController = {
 
         db.Usuario.findOne(filtro)
             .then((result) => {
+                // return res.send(result)
 
                 if (result) {
                     if (bcrypt.compareSync(req.body.contrasenia, result.contrasenia)) {
@@ -48,7 +49,7 @@ let usersController = {
             })
     },
     register: function (req, res) {
-        return res.render("register", { old: null });
+        return res.render("register");
     },
     store: function (req, res) {
         let errors = validationResult(req);
@@ -129,7 +130,7 @@ let usersController = {
                 })
                 .then((perfilEditado)=>{
                     req.session.user = perfilEditado
-                    return res.redirect('/index');
+                    return res.redirect('/');
                 })
                 .catch((error)=>{
                     return console.log(error);

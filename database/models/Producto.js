@@ -50,7 +50,7 @@ module.exports = function (sequelize, dataTypes) {
         }),
             Producto.belongsTo(models.Usuario, {
                 as: "usuarios",
-                foreignKey: "id_usuario"
+                foreignKey: "id_usuario" // id_usuario hace referencia al vendedor del producto
             })
 
     }
