@@ -12,9 +12,20 @@ let productsController = {
         db.Producto.findByPk(idProducto)
             .then((result) => {
                 if (result) {
-                    db.Comentario.findAll({ where: { producto_id: result.id }, include: [{ model: db.Usuario, as: "usuarios" }] })
+                    db.Comentario.findAll({
+                        where: { producto_id: result.id },
+                        include:
+                            [{
+                                model: db.Usuario,
+                                as: "usuarios"
+                            }]
+                    })
                         .then((comentarios) => {
-                            return res.render("product", { producto: result, comentarios });
+                            db.Usuario.findByPk(result.id_usuario)
+                            .then((usuario) => {
+                                console.log(result);
+                                return res.render("product", { producto: result, comentarios, usuario: usuario });
+                            })
                         })
                 } else {
                     // Caso donde el producto no existe

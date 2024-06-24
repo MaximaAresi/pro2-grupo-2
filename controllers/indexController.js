@@ -6,10 +6,11 @@ let indexController = {
       include: [{
         model: db.Comentario,
         as: "comentarios"
-      }]
+      }],
+      order: [["id", "DESC"]],
     }) //poner filtrado dentro de los parentesis
       .then(function (response) {
-            return res.render("index", { listaProducto: response})
+        return res.render("index", { listaProducto: response })
       }).catch(function (err) {
         return console.log(err);
       })
@@ -18,9 +19,14 @@ let indexController = {
   descripcion: function (req, res) {
     db.Producto.findAll({
       where: {
-        searchResults: { [Op.or]: [{ descripcionProducto: '%%' }, { nombreProducto: '%%' }] },
-        order: ["createdAt", "DESC"]
-      }
+        searchResults: {
+          [Op.or]: [
+            { descripcionProducto: '%%' },
+            { nombreProducto: '%%' }
+          ]
+        }
+      },
+      order: [["id", "DESC"]]
     })
       .then(function (productos) {
         if (searchResults != undefined) {

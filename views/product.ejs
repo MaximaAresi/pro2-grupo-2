@@ -20,12 +20,11 @@
 									<h2 class="products-title">
 										<% if (producto && producto.nombreProducto){ %>
 											<p>
-												<%= locals.producto.nombreProducto %>
+												<a href="/users/profile/<%= usuario.id %>">@<%= usuario.usuario %></a> ha publicado: <strong><%=locals.producto.nombreProducto %></strong>
 											</p>
 											<% }else {%>
 												<p>Producto no disponible</p>
 												<%} %>
-
 									</h2>
 									<p class="product-detail-description">
 										<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
@@ -40,6 +39,7 @@
 										<article class="col-12 col-lg-8 product-detail-info">
 											<img class="product-detail-img" src="/images/<%= producto.fotoProducto %>"
 												alt="<%= producto.nombreProducto %>">
+
 											<p class="product-detail-description">
 												Descripción del producto: <%= producto.descripcionProducto %>
 											</p>
@@ -49,18 +49,17 @@
 												<% for(let i=0; i<comentarios.length; i++) { %>
 
 													<article>
-														<% console.log(producto) %>
-															<img
-																src="/images/users/<%= comentarios[i].usuarios.fotoPerfil %>">
-															<div class="data">
-																<p class="user">
-																	<strong> <a
-																			href="/users/profile/<%= comentarios[i].usuarios.id %>">
-																			@<%=comentarios[i].usuarios.usuario%>
-																				:</a> </strong>
-																	<%= comentarios[i].texto_comentario %>
-																</p>
-															</div>
+														<img
+															src="/images/users/<%= comentarios[i].usuarios.fotoPerfil %>">
+														<div class="data">
+															<p class="user">
+																<strong> <a
+																		href="/users/profile/<%= comentarios[i].usuarios.id %>">
+																		@<%=comentarios[i].usuarios.usuario%>
+																			:</a> </strong>
+																<%= comentarios[i].texto_comentario %>
+															</p>
+														</div>
 													</article>
 													<hr>
 													</hr>

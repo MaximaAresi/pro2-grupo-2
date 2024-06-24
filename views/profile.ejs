@@ -7,12 +7,11 @@
 		<!-- Header -->
 		<%if (locals.user !=undefined) { %>
 			<%- include ('./partials/headerLogueado') %>
-				<% }else{%>
-					<%- include ('./partials/headerDeslogueado')%> 
+				<% } else{%>
+					<%- include ('./partials/headerDeslogueado')%>
 						<% } %>
 
 							<!-- /Header -->
-
 							<!-- Datos del usuario -->
 							<section class="info-usuario container products-wrapper">
 								<div class="row">
@@ -26,26 +25,28 @@
 											<h1 class="main-title-username">
 												<p>@<%= usuario.usuario %>
 												</p>
-												<% if (locals.user.usuario == usuario.usuario) { %>
-													<!-- Para que solo aparezca el boton de editar si es el perfil propio -->
-													<a href="/users/id/edit">
-														<i class="fas fa-cog ruedita"></i>
-													</a>
-													<%}%>
 											</h1>
-											<% if (locals.user.usuario !=usuario.usuario) { %>
-												<!-- Para que solo aparezca el boton de seguir si no es el perfil propio -->
+													
+											<!-- Para que solo aparezca el boton de editar si es el perfil propio, y "seguir" si es ageno" -->
+
+											<%if (locals.user == undefined) { %>
 												<a class="btn mt-3 ml-4" href="">SEGUIR</a>
-												<%}%>
+												<%} else {%>
+													<% if (locals.user.usuario==usuario.usuario ) { %>
+														<a href="/users/id/edit">
+															<i class="fas fa-cog ruedita"></i>
+														</a>
+														<%} else { %>
+															<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+															<%}%>
+																<%}%>
 										</div>
-										<div>
-											<h3 class='subtitle-email'>
-												<%= usuario.email %>
-											</h3>
-										</div>
+
 										<div>
 											<ul class="">
-												<li><%= productos.length%> productos</li>
+												<li>
+													<%= productos.length%> productos
+												</li>
 												<li>200 seguidores</li>
 												<li>300 comentarios</li>
 											</ul>

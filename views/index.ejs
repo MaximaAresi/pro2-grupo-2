@@ -8,7 +8,7 @@
 		<%if (locals.user !=undefined) { %>
 			<%- include ('./partials/headerLogueado') %>
 				<% }else{%>
-					<%- include ('./partials/headerDeslogueado')%> 
+					<%- include ('./partials/headerDeslogueado')%>
 						<% } %>
 							<!-- /Header -->
 
@@ -25,7 +25,7 @@
 										<h2 class="products-title">Novedades</h2>
 									</div>
 									<!-- Show the "ultimos" products -->
-									<% for (let i=0; i < 4; i++ ) { %>
+									<% for (let i=0; i < 12; i++ ) { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
 												<a href="/products/detalle/<%= listaProducto[i].id %>">
@@ -53,39 +53,7 @@
 							</div>
 							<!-- /Novedades -->
 
-							<!-- Más comentados -->
-							<div class="container products-wrapper">
-								<div class="row">
-									<div class="col-12">
-										<h2 class="products-title">Más comentados</h2>
-									</div>
-									<!-- Show the "ultimos" products -->
-									<% for (let i=5; i < 9; i++ ) { %>
-										<div class="col-12 col-sm-6 col-lg-3">
-											<section class="product-box">
-												<a href="/products/detalle/<%= listaProducto[i].id %>">
-													<figure class="product-box_image">
-														<img class="imgalt"
-															src="./images/<%= listaProducto[i].fotoProducto %>"
-															alt="<%= listaProducto[i].nombreProducto %>">
-													</figure>
-													<article class="product-box_data">
-														<h2>
-															<%= listaProducto[i].nombreProducto%>
-														</h2>
-														<p>
-															<%= listaProducto[i].descripcionProducto%>
-														</p>
-														<p> Comentarios:
-															<%= listaProducto[i].comentarios.length %>
-														</p>
-													</article>
-												</a>
-											</section>
-										</div>
-										<% } %>
-								</div>
-							</div>
+
 							<!-- /Más comentados -->
 
 							<!-- footer -->
