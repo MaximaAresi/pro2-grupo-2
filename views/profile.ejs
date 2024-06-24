@@ -26,18 +26,17 @@
 												<p>@<%= usuario.usuario %>
 												</p>
 											</h1>
-													
+
 											<!-- Para que solo aparezca el boton de editar si es el perfil propio, y "seguir" si es ageno" -->
 
-											<%if (locals.user == undefined) { %>
+											<%if (locals.user==undefined) { %>
 												<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 												<%} else {%>
 													<% if (locals.user.usuario==usuario.usuario ) { %>
-														<div class="btn mt-3 ml-4" >
-															<a href="/users/edit/id"> EDITAR
-																<i class="fas fa-cog ruedita"></i>
-															</a>
-														</div>
+														<a href="/users/edit/<%=usuario.id%>">
+															<i class="fas fa-cog mt-3 ml-4"></i>
+														</a>
+
 														<%} else { %>
 															<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 															<%}%>

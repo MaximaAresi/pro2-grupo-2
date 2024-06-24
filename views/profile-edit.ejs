@@ -5,64 +5,63 @@
 
 	<body>
 		<!-- Header -->
-		<%if (locals.user != undefined) { %>
+		<%if (locals.user !=undefined) { %>
 			<%- include ('./partials/headerLogueado') %>
-		 <% }else{%>
-		   <%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
-		 <% } %>
-			<!-- /Header -->
+				<% }else{%>
+					<%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
+						<% } %>
+							<!-- /Header -->
 
-			<!-- Novedades -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Editar mi perfil</h2>
-					</div>
-					<!-- Show the "ultimos" products -->
-					<h2 class="col-12">
+							<!-- Novedades -->
+							<div class="container products-wrapper">
+								<div class="row">
+									<div class="col-12">
+										<h2 class="products-title">Editar mi perfil</h2>
+									</div>
+									<!-- Show the "ultimos" products -->
+									<h2 class="col-12">
+											<form class="formModificado" action="/users/edit/" method="POST">
+												<div>
+													<% if (locals.errors){ %>
+														<% for (let error in errors){ %>
+															<p>
+																<%= errors[error].msg %>
+															</p>
+															<% } %>
+																<% } %>
+												</div>
+												<div>
+													<label for="usuario">Ingrese su nuevo nombre de usuario:
+														<input id="usuario" type="text" name="usuario"
+															value="<%= locals.user.usuario %>">
+													</label>
+												</div>
+												<div>
+													<label for="contraseña">Ingrese su nueva contraseña:
+														<input id="contrasenia" type="password" name="contrasenia">
+													</label>
+												</div>
+												<div>
+													<label for="email">Ingrese su nuevo mail:
+														<input id="mail" type="email" name="mail"
+															value="<%= locals.user.mail %>">
+													</label>
+												</div>
+												<div>
+													<label for="fdp">Ingrese su nueva foto de perfil:
+														<input id="fotoPerfil" type="file" name="fotoPerfil"
+															accept="image/*" value="<%= locals.user.fotoPerfil %>">
+													</label>
+												</div>
 
-						<form class="formModificado" action="/users/edit/:id" method="POST">
-							<div>
-								<% if (locals.errors){ %>
-									<% for (let error in errors){ %>
-										<p><%= errors[error].msg %></p>
-									<% } %>
-								<% } %>
-							</div>
-							<div>
-								<label for="usuario">Ingrese su nuevo nombre de usuario: 
-									<input id="usuario" type="text"  name="usuario" value="<%= locals.user.usuario %>"> 
-									<!-- dice undefined y no logro entender PORQUE, en product-edit funcionaba asi. Porque user no se esta guardando-->
-								</label>
-							</div>
-							<div>
-								<label for="contraseña">Ingrese su nueva contraseña: 
-									<input id="contrasenia" type="text" name="contrasenia">
-								 </label>
-							</div>
-							<div>
-								<label for="email">Ingrese su nuevo mail: 
-									<input id="mail" type="email" name="mail" value="<%= locals.user.mail %>"> 
-								</label>
-							</div>
-							<div>
-								<label for="fdp">Ingrese su nueva foto de perfil: 
-									<input id="fotoPerfil" type="file" name="fotoPerfil" value="<%= locals.user.fotoPerfil %>">
-								</label>
-							</div>
-
-							<div>
-								<input type="submit" value="Submit" /> 
-								<!-- o BUTTON? -->
-							</div>
-						</form>
-
-					</h2>
-
-
-					<!-- footer -->
-					<%- include('./partials/footer.ejs') %>
-						<!-- /footer -->
+												<div>
+													<input type="submit" value="Submit" />
+												</div>
+											</form>
+									</h2>
+									<!-- footer -->
+									<%- include('./partials/footer.ejs') %>
+										<!-- /footer -->
 	</body>
 
 </html>

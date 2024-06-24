@@ -12,14 +12,14 @@ let registerValidation = [
         // busco a ver si ya hay un usuario con el mismo mail 
         .custom(function (value) {
             return db.Usuario.findOne({
-                where: { email: value }
+                where: { mail: value }
             })
                 .then(function (usuario) {
                     if (usuario) {
                         throw new Error('El mail ingresado ya se encuentra registrado')
                     }
                 })
-            })
+        })
     ,
     body("usuario")
         .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese un nombre de usuario").bail()
@@ -27,14 +27,14 @@ let registerValidation = [
     body("contrasenia")
         .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese una contreseña").bail()
         .isLength({ min: 4, max: 250 }).withMessage("La contraseña debe tener más de 4 caracteres y menos de 250")
-    , 
+    ,
     body('fecha')
-    .optional({ checkFalsy: true }) // Permite que este vacio, pero si no lo esta tiene que cumplir con las condiciones. 
-    .isDate().withMessage('Por favor, ingrese la fecha en formato AAA/MM/DD')
+        .optional({ checkFalsy: true }) // Permite que este vacio, pero si no lo esta tiene que cumplir con las condiciones. 
+        .isDate().withMessage('Por favor, ingrese la fecha en formato AAA/MM/DD')
     ,
     body('dni')
-    .optional({ checkFalsy: true })
-    .isInt().withMessage('Por favor, complete un DNI numerico.')
+        .optional({ checkFalsy: true })
+        .isInt().withMessage('Por favor, complete un DNI numerico.')
 ]
 
 let loginValidation = [
@@ -80,7 +80,7 @@ let editValidation = [
         .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese un nombre de usuario").bail()
     ,
     body("contrasenia")
-        .optional({ chaeckFalsy: true})
+        .optional({ checkFalsy: true })
         .isLength({ min: 4, max: 250 }).withMessage("La contraseña debe tener más de 4 caracteres y menos de 250").bail()
 ]
 
@@ -102,6 +102,6 @@ router.post('/register', registerValidation, usersController.store);
 router.post('/login', loginValidation, usersController.login);
 router.post('/logout', usersController.logout);
 
-router.post('/edit/:id', editValidation, usersController.profilePost);
+router.post('/edit', editValidation, usersController.profilePost);
 
 module.exports = router;

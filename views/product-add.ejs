@@ -30,7 +30,7 @@
 													name="Descripcion" type="text"
 													value="<%= locals.old && old.Descripcion ? old.Descripcion: ''%>" /></label>
 											<label for="Foto_Producto">Foto del Producto: <input id="Foto_Producto"
-													name="Foto_Producto" type="file"
+													name="Foto_Producto" type="file" accept="image/*"
 													value="<%= locals.old && old.Foto_Producto ? old.Foto_Producto: ''%>" /></label>
 											<label for="Precio_Producto">Precio del Producto: <input
 													id="Precio_Producto" name="Precio_Producto" type="number"
@@ -41,12 +41,8 @@
 													<%= errores.msg%>
 												</p>
 												<%})}%>
-
-													<input type="submit" value="Submit" />
-
+													<input type="submit" value="Confirmar" />
 										</form>
-
-
 										<% if (locals && locals.mensajesDeError){%>
 											<% for (let error in mensajesDeError) {%>
 												<p>
@@ -55,7 +51,6 @@
 												<%}%>
 													<%}%>
 									</h2>
-
 
 									<!-- footer -->
 									<%- include('./partials/footer.ejs') %>

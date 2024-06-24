@@ -23,52 +23,58 @@
                                     <h2 class="col-12">
                                         <% if (locals.user) { %>
                                             <% if (locals.user !=undefined ) { %>
-                                                <form class="login" action="/products/edit/id" method="POST">
-                                                
-                                                <div>
-                                                    <% if (locals.errors){ %>
-                                                        <% for (let error in errors){ %>
-                                                            <p><%= errors[error].msg %></p>
-                                                        <% } %>
-                                                    <% } %>
-                                                </div> 
-                                                <div>
-                                                    <label for="Nombre_Producto">Nombre del Producto:
-                                                        <input id="nombreProducto" name="nombreProducto" type="text"
-                                                            value="<%= locals.producto.nombreProducto %>" />
-                                                             <!-- locals.nombreTabla.propiedad  -->
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <label for="Descripcion">Descripcion del Producto:
-                                                        <input id="descripcionProducto" name="descripcionProducto" type="text"
-                                                                value="<%= locals.producto.descripcionProducto %>" /> 
-                                                    </label>
-                                                </div>                                
-                                                <div>
-                                                    <label for="Foto_Producto">Foto del Producto:
-                                                        <input id="fotoProducto" name="fotoProducto" type="file"
+                                                <form class="formModificado"
+                                                    action="/products/edit/<%= locals.producto.id %>" method="POST">
+
+                                                    <div>
+                                                        <% if (locals.errors){ %>
+                                                            <% for (let error in errors){ %>
+                                                                <p>
+                                                                    <%= errors[error].msg %>
+                                                                </p>
+                                                                <% } %>
+                                                                    <% } %>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Nombre_Producto">Nombre del Producto:
+                                                            <input id="nombreProducto" name="nombreProducto" type="text"
+                                                                value="<%= locals.producto.nombreProducto %>" />
+                                                            <!-- locals.nombreTabla.propiedad  -->
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Descripcion">Descripcion del Producto:
+                                                            <input id="descripcionProducto" name="descripcionProducto"
+                                                                type="text"
+                                                                value="<%= locals.producto.descripcionProducto %>" />
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Foto_Producto">Foto del Producto:
+                                                            <input id="fotoProducto" name="fotoProducto" type="file"
+                                                                accept="image/*"
                                                                 value="<%=locals.producto.fotoProducto %>" />
-                                                    </label>
-                                                </div>
-                                                                                            
-                                                <div>
-                                                    <button class="done" type="submit">Cargar</button>
-                                                </div>
-                                            </form>
-                                            <% } %>
-                                        <% } else { %>
-                                                <div>
-                                                <p><a href="/users/login" class="Aviso">Necesitas estar logueado a tu cuenta
-                                                        para poder editar!</a></p>
-                                                </div>
-                                        <% } %>
+                                                        </label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="submit" value="Guardar edición"></input>
+                                                    </div>
+                                                </form>
+                                                <% } %>
+                                                    <% } else { %>
+                                                        <div>
+                                                            <p><a href="/users/login" class="Aviso">Necesitas estar
+                                                                    logueado a tu cuenta
+                                                                    para poder editar!</a></p>
+                                                        </div>
+                                                        <% } %>
                                     </h2>
                                 </div>
                             </div>
                             <!-- footer -->
-									<%- include('./partials/footer.ejs') %>
-                                    <!-- /footer -->
+                            <%- include('./partials/footer.ejs') %>
+                                <!-- /footer -->
     </body>
 
 </html>

@@ -20,7 +20,10 @@
 									<h2 class="products-title">
 										<% if (producto && producto.nombreProducto){ %>
 											<p>
-												<a href="/users/profile/<%= producto.id_usuario %>">@<%= producto.usuarios.usuario.usuario %></a> ha publicado: <strong><%=locals.producto.nombreProducto %></strong>
+												<a href="/users/profile/<%= producto.id_usuario %>">@<%=
+														producto.usuarios.usuario %></a> ha publicado: <strong>
+													<%=locals.producto.nombreProducto %>
+												</strong>
 												<!-- No aparece el nombre del usuario -->
 											</p>
 											<% }else {%>
@@ -28,15 +31,15 @@
 												<% } %>
 									</h2>
 									<!-- //if (locals.user !=undefined) {  -->
-										<!-- <% //if(locals.user.id == producto.id_usuario){ %> -->
-											<p class="product-detail-description">
-											<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
-											</p>
-										<!-- <% //}else{%>
+									<!-- <% //if(locals.user.id == producto.id_usuario){ %> -->
+									<p class="product-detail-description">
+										<a href="/products/product-edit/<%= producto.id %>">Editar producto</a>
+									</p>
+									<!-- <% //}else{%>
 											<p class="product-detail-description"></p>
 
 										<% //} %> -->
-									
+
 								</div>
 
 								<div class="product-detail">
@@ -59,7 +62,7 @@
 														<div class="data">
 															<p class="user">
 																<strong> <a
-																		href="/users/profile/id/<%= comentarios[i].usuarios.id %>">
+																		href="/users/profile/<%= comentarios[i].usuarios.id %>">
 																		@<%=comentarios[i].usuarios.usuario%>
 																			:</a> </strong>
 																<%= comentarios[i].texto_comentario %>
@@ -70,23 +73,26 @@
 													</hr>
 													<% } %>
 
-													<% if (locals.user != undefined ) {%>
-														<form class="form" action="/products/comentario/id/<%=producto.id%>" method="POST">
-															<input class="form-input" type="text"
-																name="texto_comentario" value="<%locals.old !== undefined && old.texto_comentario ? old.texto_comentario:""%>"
-																placeholder="Agregar comentario">
+														<% if (locals.user !=undefined ) {%>
+															<form class="form"
+																action="/products/comentario/id/<%=producto.id%>"
+																method="POST">
+																<input class="form-input" type="text"
+																	name="texto_comentario"
+																	value="<%locals.old !== undefined && old.texto_comentario ? old.texto_comentario:""%>"
+																	placeholder="Agregar comentario">
 																<% if (locals.errores && errores.comentarios) { %>
-																	<p><%= errores.texto_comentario.msg%> </p>
-																<% }%>
-															<button type="submit" class="buy-now-button">AGREGAR
-																COMENTARIO</button>
-														</form>
-														<%}else{%>
-															<h3>Recorda que debes estar logueado para comentar</h3>
-														<%}%>
-													
-
-														
+																	<p>
+																		<%= errores.texto_comentario.msg%>
+																	</p>
+																	<% }%>
+																		<button type="submit"
+																			class="buy-now-button">AGREGAR
+																			COMENTARIO</button>
+															</form>
+															<%}else{%>
+																<h3>Recorda que debes estar logueado para comentar</h3>
+																<%}%>
 
 											</section>
 										</div>
