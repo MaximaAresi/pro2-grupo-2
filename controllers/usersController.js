@@ -2,6 +2,7 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
 
+
 let usersController = {
     showLogin: function (req, res) {
 
@@ -102,12 +103,40 @@ let usersController = {
             });
     },
     profileEdit: function (req, res) {
-        return res.render("profile-edit");
+        return res.render("profile-edit", {"usuario": db.usuario});
     },
     logout: function (req, res) {
         req.session.destroy();
         res.clearCookie("userId") //chequear si esta bien lo de userId
         return res.redirect("/users/login");
+    },
+    profilePost: function(req,res){
+        let Id = req.params.id; 
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            let form = req.body; 
+            let user = {
+                usuario: form.usuario,
+                email: form.mail, 
+                fotoPerfil: form.fotoPerfil 
+            }
+            if (form.contrasenia && form.contrasenia.length >= 4){
+                user.contrasenia = bcrypt.hashSync(form.contrasenia, 10);
+            }
+            db.Usuario.update(user, {where: {id: Id}})
+                .then((results)=>{
+                    return db.Usuario.findByPk(Id);
+                })
+                .then((perfilEditado)=>{
+                    req.session.user = perfilEditado
+                    return res.redirect('/index');
+                })
+                .catch((error)=>{
+                    return console.log(error);
+                });
+        } else {
+            return res.render("profile-edit", {errors: errors.mapped(), old: req.body});
+        }
     }
 }
 

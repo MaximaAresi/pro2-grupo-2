@@ -10,7 +10,6 @@
 		 <% }else{%>
 		   <%- include ('./partials/headerDeslogueado')%> <!--hacer un headerDeslogueado-->
 		 <% } %>
-		
 			<!-- /Header -->
 
 			<!-- Novedades -->
@@ -22,16 +21,40 @@
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
 
-						<form class="formModificado" action="/users/profile/id" method="GET">
-							<label for="usuario">Ingrese su nuevo nombre de usuario: <input id="usuario" type="text"
-									required name="usuario" value=""> </label>
-							<label for="contraseña">Ingrese su nueva contraseña: <input id="contreseña" type="text"
-									required name="contreseña" value=""> </label>
-							<label for="email">Ingrese su nuevo mail: <input id="email" type="email" required
-									name="email" value=""> </label>
-							<label for="fdp">Ingrese su nueva foto de perfil: <input id="fdp" type="file" required
-									name="fdp" value=""></label>
-							<input type="submit" value="Submit" />
+						<form class="formModificado" action="/users/edit/:id" method="POST">
+							<div>
+								<% if (locals.errors){ %>
+									<% for (let error in errors){ %>
+										<p><%= errors[error].msg %></p>
+									<% } %>
+								<% } %>
+							</div>
+							<div>
+								<label for="usuario">Ingrese su nuevo nombre de usuario: 
+									<input id="usuario" type="text"  name="usuario" value="<%= locals.user.usuario %>"> 
+									<!-- dice undefined y no logro entender PORQUE, en product-edit funcionaba asi -->
+								</label>
+							</div>
+							<div>
+								<label for="contraseña">Ingrese su nueva contraseña: 
+									<input id="contrasenia" type="text" name="contrasenia">
+								 </label>
+							</div>
+							<div>
+								<label for="email">Ingrese su nuevo mail: 
+									<input id="mail" type="email" name="mail" value="<%= locals.user.mail %>"> 
+								</label>
+							</div>
+							<div>
+								<label for="fdp">Ingrese su nueva foto de perfil: 
+									<input id="fotoPerfil" type="file" name="fotoPerfil" value="<%= locals.user.fotoPerfil %>">
+								</label>
+							</div>
+
+							<div>
+								<input type="submit" value="Submit" /> 
+								<!-- o BUTTON? -->
+							</div>
 						</form>
 
 					</h2>

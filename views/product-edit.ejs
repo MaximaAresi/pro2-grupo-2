@@ -20,60 +20,55 @@
 
                                     </div>
                                     <!-- Show the "ultimos" products -->
-                                    <% if (locals.user !=undefined) { %>
-                                        <form class="login" action="/products/edit" method="POST">
-                                            <!-- //capaz va solo /edit o /product-edit ? -->
-
-                                            <label for="Nombre_Producto">Nombre del Producto:
-                                                <input id="Nombre_Producto" name="Nombre_Producto" type="text"
-                                                    value="<%= producto.Nombre_Producto %>" /></label>
-
-                                            <% if (locals.errors && errors.Nombre_Producto){ %>
-                                                <p>
-                                                    <%= errors.Nombre_Producto.msg %>
-                                                </p>
-                                                <% } %>
-
-                                                    <label for="Descripcion">Descripcion del Producto:
-                                                        <input id="Descripcion" name="Descripcion" type="text"
-                                                            value="<%= producto.Descripcion %>" /></label>
-                                                    <% if (locals.errors && errors.Descripcion){ %>
-                                                        <p>
-                                                            <%= errors.Descripcion.msg %>
-                                                        </p>
+                                    <h2 class="col-12">
+                                        <% if (locals.user) { %>
+                                            <% if (locals.user !=undefined ) { %>
+                                                <form class="login" action="/products/edit/id" method="POST">
+                                                
+                                                <div>
+                                                    <% if (locals.errors){ %>
+                                                        <% for (let error in errors){ %>
+                                                            <p><%= errors[error].msg %></p>
                                                         <% } %>
-
-                                                            <label for="Foto_Producto">Foto del Producto:
-                                                                <input id="Foto_Producto" name="Foto_Producto"
-                                                                    type="file"
-                                                                    value="<%=producto.Foto_Producto %>" /></label>
-                                                            <% if (locals.errors && errors.Foto_Producto){ %>
-                                                                <p>
-                                                                    <%= errors.Foto_Producto.msg %>
-                                                                </p>
-                                                                <% } %>
-
-                                                                    <label for="Precio_Producto">Precio del Producto:
-                                                                        <input id="Precio_Producto"
-                                                                            name="Precio_Producto" type="number"
-                                                                            value="<%=producto.Precio_Producto %>" /></label>
-                                                                    <% if (locals.errors && errors.Precio_Producto){ %>
-                                                                        <p>
-                                                                            <%= errors.Precio_Producto.msg %>
-                                                                        </p>
-                                                                        <% } %>
-
-                                                                            <input class="done" type="submit"
-                                                                                value="Submit" />
-
-                                        </form>
-                                        <% } else %>
-                                            <p><a href="/users/login" class="Aviso">Necesitas estar logueado a tu cuenta
-                                                    para poder editar!</a></p>
-
-                                            <body>
-
-
-                                            </body>
+                                                    <% } %>
+                                                </div> 
+                                                <div>
+                                                    <label for="Nombre_Producto">Nombre del Producto:
+                                                        <input id="nombreProducto" name="nombreProducto" type="text"
+                                                            value="<%= locals.producto.nombreProducto %>" />
+                                                             <!-- locals.nombreTabla.propiedad  -->
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label for="Descripcion">Descripcion del Producto:
+                                                        <input id="descripcionProducto" name="descripcionProducto" type="text"
+                                                                value="<%= locals.producto.descripcionProducto %>" /> 
+                                                    </label>
+                                                </div>                                
+                                                <div>
+                                                    <label for="Foto_Producto">Foto del Producto:
+                                                        <input id="fotoProducto" name="fotoProducto" type="file"
+                                                                value="<%=locals.producto.fotoProducto %>" />
+                                                    </label>
+                                                </div>
+                                                                                            
+                                                <div>
+                                                    <button class="done" type="submit">Cargar</button>
+                                                </div>
+                                            </form>
+                                            <% } %>
+                                        <% } else { %>
+                                                <div>
+                                                <p><a href="/users/login" class="Aviso">Necesitas estar logueado a tu cuenta
+                                                        para poder editar!</a></p>
+                                                </div>
+                                        <% } %>
+                                    </h2>
+                                </div>
+                            </div>
+                            <!-- footer -->
+									<%- include('./partials/footer.ejs') %>
+                                    <!-- /footer -->
+    </body>
 
 </html>

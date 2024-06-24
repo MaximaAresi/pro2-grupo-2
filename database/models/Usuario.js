@@ -1,5 +1,9 @@
 module.exports = function (sequelize, dataTypes) {
+    
+    /* alias del modelo de usuario --> "Usuarios"*/
     let alias = "Usuario";
+
+    /* configuracion de las columnas */
     let cols = {
         id: {
             autoIncrement: true,
@@ -34,11 +38,13 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.DATE
         }
     }
+        /* config de la tabla */
     let config = {
         tableName: "usuarios",
-        timestamps: false,
+        timestamps: true,
         underscore: false
     }
+        /* definir el modelo */
     let Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function (models) {
         Usuario.hasMany(models.Producto, {

@@ -131,38 +131,48 @@ let productsController = {
 
         if (errors.isEmpty()) { //Si no encuentra errores manda la informacion del form y te lleva/redirige al producto editado
             let form = req.body
-
             let id_usuario = req.session.usuario.id;
 
-            let product = {
-                id_vendedor: id_usuario,
-                foto_producto: form.Foto_Producto,// Viene de product-edit y product-add, es la clave. 
-                nombreProducto: form.Nombre_Producto,// Viene de product-edit y product-add, es la clave.
-                descripcionProducto: form.Descripcion// Viene de product-edit y product-add, es la clave.
+            let errors = validationResult(req);
+           
+
+            if (errors.isEmpty()){
+
+                let product = {
+                    id_vendedor: id_usuario,
+                    foto_producto: form.fotoProducto,  
+                    nombreProducto: form.nombreProducto, 
+                    descripcionProducto: form.descripcionProducto 
+                }
+
+                db.Producto.update(product, { where: [{ id: req.params.id}] })
+                    .then((result) => {
+                        return res.redirect("/products" + result.id) 
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            } else { //Si encuentra un error me lo va a motrar en la vista
+                let id = req.params.id
+
+                db.Producto.findByPk(id, { include: [{ association: "usuarios" }] })
+                    .then(function (resultado) {
+                        return res.render("product-edit", { producto: resultado, errors: errors.mapped(), old: req.body })
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
             }
-
-            db.Producto.update(product, { where: [{ id: form.id }] })
-                .then(function (result) {
-                    return res.redirect("/products/detalle/" + form.id) //ESTA PARTE REVISARLA, sobrtodo la ruta entre ""
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-        } else { //Si encuentra un error me lo va a motrar en la vista
-
-            let id = req.params.id
-
-            db.Producto.findByPk(id, { include: [{ association: "usuarios" }] })
-                .then(function (resultado) {
-                    return res.render("product-edit", { producto: resultado, errors: errors.mapped(), old: req.body })
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
         }
     },
     productEdit: function (req, res) {
-        return res.render("product-edit", { db: db })
+        
+        let id = req.params.id;
+        
+        db.Producto.findByPk(id)
+        .then(function(result){
+           return res.render("product-edit", { "producto": result })
+        })
     },
 
 

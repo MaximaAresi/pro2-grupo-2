@@ -52,6 +52,19 @@ let loginValidation = [
         })
 ];
 
+let editValidation = [
+    body("email")
+        .notEmpty().withMessage("El campo no puede estar vacío. Por favor introduzca un e-mail").bail()
+        .isEmail().withMessage("El e-mail ingresado no es válido. Por favor introduzca un e-mail").bail()
+    ,
+    body("usuario")
+        .notEmpty().withMessage("El campo no puede estar vacío. Por favor ingrese un nombre de usuario").bail()
+    ,
+    body("contraseña")
+        .optional({ chaeckFalsy: true})
+        .isLength({ min: 4, max: 250 }).withMessage("La contraseña debe tener más de 4 caracteres y menos de 250").bail()
+]
+
 // RUTA: /users/login
 router.get('/login', usersController.showLogin);
 
@@ -62,12 +75,14 @@ router.get('/register', usersController.register);
 router.get('/profile/:id', usersController.profile);
 
 // RUTA: /[id]]/edit
-router.get('/:id/edit', usersController.profileEdit);
+router.get('/edit/:id', usersController.profileEdit);
 
 
 // Método: POST
 router.post('/register', registerValidation, usersController.store);
 router.post('/login', loginValidation, usersController.login);
 router.post('/logout', usersController.logout);
+
+router.post('/edit/:id', editValidation, usersController.profilePost);
 
 module.exports = router;

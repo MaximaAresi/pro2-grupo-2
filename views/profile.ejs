@@ -33,9 +33,11 @@
 												<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 												<%} else {%>
 													<% if (locals.user.usuario==usuario.usuario ) { %>
-														<a href="/users/id/edit">
-															<i class="fas fa-cog ruedita"></i>
-														</a>
+														<div class="btn mt-3 ml-4" >
+															<a href="/users/edit/id"> EDITAR
+																<i class="fas fa-cog ruedita"></i>
+															</a>
+														</div>
 														<%} else { %>
 															<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 															<%}%>
