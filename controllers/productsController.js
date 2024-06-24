@@ -86,6 +86,7 @@ let productsController = {
                 idUsuario: req.session.user.id,
                 idProducto: req.params.id
             }
+     
             db.Comentario.create(comentario)
                 .then(function (result) {
                     return res.redirect("/");
@@ -94,6 +95,7 @@ let productsController = {
                 })
         } else {
             let id = req.params.id
+            console.log(id);
             let filtro = {
                 include: [
                     {

@@ -16,7 +16,7 @@ let productValidation = [ // Validaciones para crear un producto
 ];
 
 let commentValidation = [ // Validaciones para agregar un comentario
-    body ('Comentario')
+    body ('texto_comentario')
     .notEmpty().withMessage("Por favor, escriba su comentario")
     .isLength({min:3}).withMessage("El comentario debe tener minimo tres caracteres"),
 ];
@@ -51,7 +51,7 @@ router.get('/product-edit/:id', productsController.productEdit) // estará bien?
 
 // RUTA: /products/add
 router.post('/add', productValidation, productsController.guardarProducto);
-router.post('/detalle/id', commentValidation, productsController.comentarProducto);
+router.post('/comentario/id/:id', commentValidation, productsController.comentarProducto);
 
 //RUTA: /products/edit/[id]
 router.post('/edit', editValidation, productsController.edit ) 
