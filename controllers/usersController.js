@@ -45,6 +45,8 @@ let usersController = {
             })
     },
     register: function (req, res) {
+        let errors = validationResult(req);
+
         if (req.session.user != undefined) {
             return res.redirect("/");
         } else {
